@@ -7,24 +7,34 @@
 
 import Foundation
 
-// MARK: - MockComments
+// Ref: https://jsonplaceholder.typicode.com/comments
 
-struct MockCommentsRequest: Request {
-    var path: String {
-        Bundle.jsonFilePath(forResource: "comments")
+// MARK: - MockRequest
+
+enum MockRequest: Request {
+    case getComments
+    case getPosts
+    case dummy
+    
+    var scheme: String { "https" }
+    var host: String {
+        switch self {
+        case .dummy:
+            ""
+        default:
+            "jsonplaceholder.typicode.com"
+        }
     }
-}
-
-// MARK: - MockPosts
-
-struct MockPostsRequest: Request {
+    var requestType: RequestType { .get }
+    
     var path: String {
-        Bundle.jsonFilePath(forResource: "posts")
+        switch self {
+        case .getComments:
+            "/comments"
+        case .getPosts:
+            "/posts"
+        case .dummy:
+            ""
+        }
     }
-}
-
-// MARK: - Dummy
-
-struct DummyMockRequest: Request {
-    var path: String = ""
 }

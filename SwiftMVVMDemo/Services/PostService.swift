@@ -14,9 +14,9 @@ enum PostRequest: Request {
     var path: String {
         switch self {
         case .postList:
-            return "posts"
+            return "/posts"
         case .post(let id):
-            return "posts/\(id)"
+            return "/posts/\(id)"
         }
     }
 }

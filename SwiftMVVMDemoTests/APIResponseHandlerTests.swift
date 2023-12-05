@@ -19,7 +19,8 @@ final class APIResponseHandlerTests: XCTestCase {
     }
     
     func testAPIResponseHandlerParseSuccess() throws {
-        let mockdata = MockResponse.data
+        // post data as mock
+        let mockdata = MockResponse.postAsData
         let responseHandler = APIResponseHandler()
         
         let result: Post = try responseHandler.getResponse(from: mockdata)
@@ -28,6 +29,7 @@ final class APIResponseHandlerTests: XCTestCase {
     }
     
     func testAPIResponseHandlerParseFailure() throws {
+        // dummy data as mock
         let invalidData = MockResponse.dummyData
         let responseHandler = APIResponseHandler()
         

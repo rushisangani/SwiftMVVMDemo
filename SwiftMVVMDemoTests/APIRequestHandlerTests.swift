@@ -20,8 +20,8 @@ final class APIRequestHandlerTests: XCTestCase {
     }
 
     func testAPIRequestHandlerReturnsDataWithValidRequest() async throws {
-        // mock request
-        let request: Request = MockCommentsRequest()
+        // mock request - get comments
+        let request: Request = MockRequest.getComments
         requestHandler = APIRequestHandler()
         
         do {
@@ -35,7 +35,7 @@ final class APIRequestHandlerTests: XCTestCase {
     
     func testAPIRequestHandlerShouldThrowErrorWithInvalidRequest() async throws {
         // dummy request
-        let request = DummyMockRequest()
+        let request: Request = MockRequest.dummy
         requestHandler = APIRequestHandler()
         
         var result: Data?

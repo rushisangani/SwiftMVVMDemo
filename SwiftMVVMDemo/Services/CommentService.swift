@@ -13,13 +13,18 @@ enum CommentsRequest: Request {
     var path: String {
         switch self {
         case .commentList:
-            return "comments"
+            return "/comments"
         }
     }
 }
 
-class CommentService {
-    let apiService: APIServiceHandler = APIService()
+protocol CommentAPIService {
+    var apiService: APIServiceHandler { get set }
+    func getComments() async throws -> [Comment]
+}
+
+class CommentService: CommentAPIService {
+    var apiService: APIServiceHandler = APIService()
     
     func getComments() async throws -> [Comment] {
         try await apiService.fetch(request: CommentsRequest.commentList)

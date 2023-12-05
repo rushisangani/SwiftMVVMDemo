@@ -195,11 +195,11 @@
 		A28F6BC82B1F498000F858E4 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				A28F6BCB2B1F498000F858E4 /* MockRequest.swift */,
+				A28F6BCD2B1F498000F858E4 /* MockResponse.swift */,
 				A28F6BC92B1F498000F858E4 /* MockAPIRequestHandler.swift */,
 				A28F6BCA2B1F498000F858E4 /* MockAPIService.swift */,
-				A28F6BCB2B1F498000F858E4 /* MockRequest.swift */,
 				A28F6BCC2B1F498000F858E4 /* MockAPIResponseHandler.swift */,
-				A28F6BCD2B1F498000F858E4 /* MockResponse.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -224,11 +224,11 @@
 		A28F6BDF2B1F499300F858E4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A28F6BE02B1F499300F858E4 /* APIService.swift */,
 				A28F6BE42B1F499300F858E4 /* Request.swift */,
-				A28F6BE52B1F499300F858E4 /* APIResponseHandler.swift */,
-				A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */,
 				A28F6BE72B1F499300F858E4 /* RequestError.swift */,
+				A28F6BE02B1F499300F858E4 /* APIService.swift */,
+				A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */,
+				A28F6BE52B1F499300F858E4 /* APIResponseHandler.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

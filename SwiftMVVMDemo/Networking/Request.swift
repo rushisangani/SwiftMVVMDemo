@@ -7,6 +7,16 @@
 
 import Foundation
 
+// MARK: - RequestType
+
+enum RequestType: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+}
+
 // MARK: - Request
 
 protocol Request {
@@ -58,14 +68,4 @@ extension Request {
         
         return urlRequest
     }
-}
-
-// MARK: - RequestType
-
-enum RequestType: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case patch = "PATCH"
-    case delete = "DELETE"
 }

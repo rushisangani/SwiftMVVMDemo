@@ -8,7 +8,7 @@
 import Foundation
 
 struct APIConstants {
-    static let host = "https://jsonplaceholder.typicode.com/"
+    static let host = "jsonplaceholder.typicode.com"
 }
 
 
