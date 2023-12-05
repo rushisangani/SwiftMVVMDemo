@@ -6,13 +6,13 @@
 //
 
 import XCTest
+@testable import SwiftMVVMDemo
 
 final class APIRequestHandlerTests: XCTestCase {
-
-    var requestHandler: RequestHandler!
+    var requestHandler: RequestHandler?
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        requestHandler = APIRequestHandler()
     }
 
     override func tearDownWithError() throws {
@@ -22,24 +22,53 @@ final class APIRequestHandlerTests: XCTestCase {
     func testAPIRequestHandlerReturnsDataWithValidRequest() async throws {
         // mock request - get comments
         let request: Request = MockRequest.getComments
-        requestHandler = APIRequestHandler()
         
         do {
-            let data = try await requestHandler.fetchData(from: request)
+            let data = try await requestHandler!.fetchData(from: request)
             XCTAssert(!data.isEmpty, "Expected data should not be empty.")
         } 
         catch {
-            XCTAssertThrowsError("fatal error")
+            XCTFail(error.localizedDescription)
         }
     }
     
     func testAPIRequestHandlerShouldThrowErrorWithInvalidRequest() async throws {
         // dummy request
         let request: Request = MockRequest.dummy
-        requestHandler = APIRequestHandler()
         
         var result: Data?
-        result = try? await requestHandler.fetchData(from: request)
+        result = try? await requestHandler!.fetchData(from: request)
         XCTAssertNil(result, "Dummy request should return nil data.")
+    }
+}
+
+// MARK: - Mocks
+// Ref: https://jsonplaceholder.typicode.com/comments
+
+enum MockRequest: Request {
+    case getComments
+    case getPosts
+    case dummy
+    
+    var scheme: String { "https" }
+    var host: String {
+        switch self {
+        case .dummy:
+            ""
+        default:
+            "jsonplaceholder.typicode.com"
+        }
+    }
+    var requestType: RequestType { .get }
+    
+    var path: String {
+        switch self {
+        case .getComments:
+            "/comments"
+        case .getPosts:
+            "/posts"
+        case .dummy:
+            ""
+        }
     }
 }

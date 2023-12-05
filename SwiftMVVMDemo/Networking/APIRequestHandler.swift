@@ -16,7 +16,7 @@ protocol RequestHandler {
 
 // MARK: - APIRequestHandler
 
-class APIRequestHandler: RequestHandler {
+struct APIRequestHandler: RequestHandler {
     var session = URLSession.shared
     
     func fetchData(from request: Request) async throws -> Data {

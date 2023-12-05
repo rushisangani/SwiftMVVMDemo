@@ -13,9 +13,16 @@ protocol APIServiceHandler {
     func fetch<T: Codable>(request: Request) async throws -> T
 }
 
-class APIService: APIServiceHandler {
-    var requestHandler: RequestHandler = APIRequestHandler()
-    var responseHandler: ResponseHandler = APIResponseHandler()
+struct APIService: APIServiceHandler {
+    var requestHandler: RequestHandler
+    var responseHandler: ResponseHandler
+    
+    init(requestHandler: RequestHandler = APIRequestHandler(),
+         responseHandler: ResponseHandler = APIResponseHandler()
+    ) {
+        self.requestHandler = requestHandler
+        self.responseHandler = responseHandler
+    }
     
     func fetch<T: Codable>(request: Request) async throws -> T {
         let data = try await requestHandler.fetchData(from: request)

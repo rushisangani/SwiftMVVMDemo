@@ -16,7 +16,7 @@ protocol ResponseHandler {
 
 // MARK: - APIResponseHandler
 
-class APIResponseHandler: ResponseHandler {
+struct APIResponseHandler: ResponseHandler {
     var decoder = JSONDecoder()
     
     func getResponse<T: Codable>(from data: Data) throws -> T {

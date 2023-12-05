@@ -17,11 +17,6 @@
 		A28F6BB92B1F490B00F858E4 /* SwiftMVVMDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BB82B1F490B00F858E4 /* SwiftMVVMDemoUITestsLaunchTests.swift */; };
 		A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BC62B1F498000F858E4 /* Bundle+Extension.swift */; };
 		A28F6BD32B1F498000F858E4 /* APIRequestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BC72B1F498000F858E4 /* APIRequestHandlerTests.swift */; };
-		A28F6BD42B1F498000F858E4 /* MockAPIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BC92B1F498000F858E4 /* MockAPIRequestHandler.swift */; };
-		A28F6BD52B1F498000F858E4 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BCA2B1F498000F858E4 /* MockAPIService.swift */; };
-		A28F6BD62B1F498000F858E4 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BCB2B1F498000F858E4 /* MockRequest.swift */; };
-		A28F6BD72B1F498000F858E4 /* MockAPIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BCC2B1F498000F858E4 /* MockAPIResponseHandler.swift */; };
-		A28F6BD82B1F498000F858E4 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BCD2B1F498000F858E4 /* MockResponse.swift */; };
 		A28F6BDA2B1F498000F858E4 /* APIResponseHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BD02B1F498000F858E4 /* APIResponseHandlerTests.swift */; };
 		A28F6BDB2B1F498000F858E4 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BD12B1F498000F858E4 /* APIServiceTests.swift */; };
 		A28F6BED2B1F499300F858E4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BDD2B1F499300F858E4 /* Comment.swift */; };
@@ -34,17 +29,7 @@
 		A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE92B1F499300F858E4 /* APIConstants.swift */; };
 		A28F6BF82B1F499300F858E4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEB2B1F499300F858E4 /* PostService.swift */; };
 		A28F6BF92B1F499300F858E4 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEC2B1F499300F858E4 /* CommentService.swift */; };
-		A28F6BFA2B1F4A3600F858E4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BDD2B1F499300F858E4 /* Comment.swift */; };
-		A28F6BFB2B1F4A3800F858E4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BDE2B1F499300F858E4 /* Post.swift */; };
-		A28F6BFC2B1F4A3C00F858E4 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE42B1F499300F858E4 /* Request.swift */; };
-		A28F6BFD2B1F4A3C00F858E4 /* APIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */; };
-		A28F6BFE2B1F4A3C00F858E4 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE72B1F499300F858E4 /* RequestError.swift */; };
-		A28F6BFF2B1F4A3C00F858E4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE02B1F499300F858E4 /* APIService.swift */; };
-		A28F6C002B1F4A3C00F858E4 /* APIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE52B1F499300F858E4 /* APIResponseHandler.swift */; };
-		A28F6C012B1F4A3F00F858E4 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEC2B1F499300F858E4 /* CommentService.swift */; };
-		A28F6C022B1F4A3F00F858E4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEB2B1F499300F858E4 /* PostService.swift */; };
 		A28F6C032B1F4A4500F858E4 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = A28F6BCF2B1F498000F858E4 /* comments.json */; };
-		A28F6C042B1F4AB800F858E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE92B1F499300F858E4 /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +64,6 @@
 		A28F6BB82B1F490B00F858E4 /* SwiftMVVMDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMVVMDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A28F6BC62B1F498000F858E4 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		A28F6BC72B1F498000F858E4 /* APIRequestHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestHandlerTests.swift; sourceTree = "<group>"; };
-		A28F6BC92B1F498000F858E4 /* MockAPIRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIRequestHandler.swift; sourceTree = "<group>"; };
-		A28F6BCA2B1F498000F858E4 /* MockAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
-		A28F6BCB2B1F498000F858E4 /* MockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
-		A28F6BCC2B1F498000F858E4 /* MockAPIResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIResponseHandler.swift; sourceTree = "<group>"; };
-		A28F6BCD2B1F498000F858E4 /* MockResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
 		A28F6BCF2B1F498000F858E4 /* comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments.json; sourceTree = "<group>"; };
 		A28F6BD02B1F498000F858E4 /* APIResponseHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseHandlerTests.swift; sourceTree = "<group>"; };
 		A28F6BD12B1F498000F858E4 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
@@ -168,7 +148,6 @@
 				A28F6BC72B1F498000F858E4 /* APIRequestHandlerTests.swift */,
 				A28F6BD02B1F498000F858E4 /* APIResponseHandlerTests.swift */,
 				A28F6BD12B1F498000F858E4 /* APIServiceTests.swift */,
-				A28F6BC82B1F498000F858E4 /* Mocks */,
 				A28F6BCE2B1F498000F858E4 /* TestData */,
 				A28F6BC52B1F498000F858E4 /* TestHelpers */,
 			);
@@ -190,18 +169,6 @@
 				A28F6BC62B1F498000F858E4 /* Bundle+Extension.swift */,
 			);
 			path = TestHelpers;
-			sourceTree = "<group>";
-		};
-		A28F6BC82B1F498000F858E4 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6BCB2B1F498000F858E4 /* MockRequest.swift */,
-				A28F6BCD2B1F498000F858E4 /* MockResponse.swift */,
-				A28F6BC92B1F498000F858E4 /* MockAPIRequestHandler.swift */,
-				A28F6BCA2B1F498000F858E4 /* MockAPIService.swift */,
-				A28F6BCC2B1F498000F858E4 /* MockAPIResponseHandler.swift */,
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A28F6BCE2B1F498000F858E4 /* TestData */ = {
@@ -403,24 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A28F6BFE2B1F4A3C00F858E4 /* RequestError.swift in Sources */,
-				A28F6BFF2B1F4A3C00F858E4 /* APIService.swift in Sources */,
-				A28F6BD72B1F498000F858E4 /* MockAPIResponseHandler.swift in Sources */,
-				A28F6BFC2B1F4A3C00F858E4 /* Request.swift in Sources */,
-				A28F6BFB2B1F4A3800F858E4 /* Post.swift in Sources */,
-				A28F6C042B1F4AB800F858E4 /* APIConstants.swift in Sources */,
-				A28F6BD52B1F498000F858E4 /* MockAPIService.swift in Sources */,
 				A28F6BDA2B1F498000F858E4 /* APIResponseHandlerTests.swift in Sources */,
-				A28F6C022B1F4A3F00F858E4 /* PostService.swift in Sources */,
-				A28F6BD42B1F498000F858E4 /* MockAPIRequestHandler.swift in Sources */,
 				A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */,
-				A28F6C012B1F4A3F00F858E4 /* CommentService.swift in Sources */,
-				A28F6BFA2B1F4A3600F858E4 /* Comment.swift in Sources */,
-				A28F6C002B1F4A3C00F858E4 /* APIResponseHandler.swift in Sources */,
-				A28F6BD62B1F498000F858E4 /* MockRequest.swift in Sources */,
 				A28F6BDB2B1F498000F858E4 /* APIServiceTests.swift in Sources */,
-				A28F6BD82B1F498000F858E4 /* MockResponse.swift in Sources */,
-				A28F6BFD2B1F4A3C00F858E4 /* APIRequestHandler.swift in Sources */,
 				A28F6BD32B1F498000F858E4 /* APIRequestHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
