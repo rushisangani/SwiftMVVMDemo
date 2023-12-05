@@ -9,7 +9,7 @@ import XCTest
 @testable import SwiftMVVMDemo
 
 final class APIRequestHandlerTests: XCTestCase {
-    var requestHandler: RequestHandler?
+    var requestHandler: RequestHandling?
     
     override func setUpWithError() throws {
         requestHandler = APIRequestHandler()

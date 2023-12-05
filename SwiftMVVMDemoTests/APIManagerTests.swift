@@ -1,5 +1,5 @@
 //
-//  APIServiceTests.swift
+//  APIManagerTests.swift
 //  MVVMDemoTests
 //
 //  Created by Rushi Sangani on 30/11/2023.
@@ -8,26 +8,26 @@
 import XCTest
 @testable import SwiftMVVMDemo
 
-final class APIServiceTests: XCTestCase {
-    var apiService: APIServiceHandler?
+final class APIManagerTests: XCTestCase {
+    var apiManager: APIService?
     
     override func setUpWithError() throws {
-        apiService = APIService(
+        apiManager = APIManager(
             requestHandler: MockAPIRequestHandler(),
             responseHandler: MockAPIResponseHandler()
         )
     }
 
     override func tearDownWithError() throws {
-        apiService = nil
+        apiManager = nil
     }
     
     func testAPIServiceGetComments() async throws {
         var comments: [Comment] = []
-        let expectation = XCTestExpectation(description: "APIService Get Comments")
+        let expectation = XCTestExpectation(description: "APIManager Get Comments")
         
         do {
-            comments = try await apiService!.fetch(request: MockRequest.getComments)
+            comments = try await apiManager!.fetch(request: MockRequest.getComments)
             expectation.fulfill()
             
             let comment = try XCTUnwrap(comments.first)
@@ -43,8 +43,7 @@ final class APIServiceTests: XCTestCase {
 
 // MARK: - Mocks
 
-class MockAPIRequestHandler: RequestHandler {
-    var session: URLSession = .shared
+fileprivate class MockAPIRequestHandler: RequestHandling {
     
     func fetchData(from request: Request) async throws -> Data {
         let filePath = Bundle.jsonFilePath(forResource: "comments")
@@ -52,11 +51,9 @@ class MockAPIRequestHandler: RequestHandler {
     }
 }
 
-class MockAPIResponseHandler: ResponseHandler {
-    var decoder = JSONDecoder()
+fileprivate class MockAPIResponseHandler: ResponseHandling {
     
     func getResponse<T: Codable>(from data: Data) throws -> T {
-        // TODO: how to return mock data here?
-        try decoder.decode(T.self, from: data)
+        try JSONDecoder().decode(T.self, from: data)
     }
 }

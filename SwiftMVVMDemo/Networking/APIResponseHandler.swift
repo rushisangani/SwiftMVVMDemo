@@ -7,17 +7,20 @@
 
 import Foundation
 
-// MARK: - ResponseHandler
+// MARK: - ResponseHandling
 
-protocol ResponseHandler {
-    var decoder: JSONDecoder { get }
+protocol ResponseHandling {
     func getResponse<T: Codable>(from response: Data) throws -> T
 }
 
 // MARK: - APIResponseHandler
 
-struct APIResponseHandler: ResponseHandler {
-    var decoder = JSONDecoder()
+struct APIResponseHandler: ResponseHandling {
+    let decoder: JSONDecoder
+    
+    init(decoder: JSONDecoder = JSONDecoder()) {
+        self.decoder = decoder
+    }
     
     func getResponse<T: Codable>(from data: Data) throws -> T {
         do {

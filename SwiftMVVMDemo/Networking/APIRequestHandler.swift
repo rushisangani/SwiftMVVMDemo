@@ -7,17 +7,20 @@
 
 import Foundation
 
-// MARK: - RequestHandler
+// MARK: - RequestHandling
 
-protocol RequestHandler {
-    var session: URLSession { get }
+protocol RequestHandling {
     func fetchData(from request: Request) async throws -> Data
 }
 
 // MARK: - APIRequestHandler
 
-struct APIRequestHandler: RequestHandler {
-    var session = URLSession.shared
+struct APIRequestHandler: RequestHandling {
+    let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     func fetchData(from request: Request) async throws -> Data {
         let urlRequest = try request.createURLRequest()
