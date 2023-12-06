@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B982B1F490900F858E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B972B1F490900F858E4 /* SceneDelegate.swift */; };
-		A28F6B9A2B1F490900F858E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B992B1F490900F858E4 /* ViewController.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
 		A28F6BA22B1F490B00F858E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6BA02B1F490B00F858E4 /* LaunchScreen.storyboard */; };
@@ -34,6 +33,9 @@
 		A28F6C102B1FAAB500F858E4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C0F2B1FAAB500F858E4 /* PostService.swift */; };
 		A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C112B1FAB7200F858E4 /* APIManager.swift */; };
 		A28F6C172B1FB9A200F858E4 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = A28F6C152B1FB98800F858E4 /* posts.json */; };
+		A28F6C1E2B20BA5800F858E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C1D2B20BA5800F858E4 /* ViewController.swift */; };
+		A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */; };
+		A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,6 @@
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28F6B972B1F490900F858E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A28F6B992B1F490900F858E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A28F6B9C2B1F490900F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28F6BA12B1F490B00F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,6 +86,9 @@
 		A28F6C0F2B1FAAB500F858E4 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		A28F6C112B1FAB7200F858E4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A28F6C152B1FB98800F858E4 /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		A28F6C1D2B20BA5800F858E4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +144,10 @@
 				A28F6C182B205C8100F858E4 /* Models */,
 				A28F6C192B205C9100F858E4 /* Services */,
 				A28F6C052B1F7B8F00F858E4 /* Views */,
+				A28F6C1F2B20BDF400F858E4 /* Helpers */,
 				A28F6B952B1F490900F858E4 /* AppDelegate.swift */,
 				A28F6B972B1F490900F858E4 /* SceneDelegate.swift */,
-				A28F6B992B1F490900F858E4 /* ViewController.swift */,
+				A28F6C1D2B20BA5800F858E4 /* ViewController.swift */,
 				A28F6B9B2B1F490900F858E4 /* Main.storyboard */,
 				A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */,
 				A28F6BA02B1F490B00F858E4 /* LaunchScreen.storyboard */,
@@ -259,6 +264,15 @@
 				A28F6BEC2B1F499300F858E4 /* CommentService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A28F6C1F2B20BDF400F858E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */,
+				A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,12 +409,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28F6C1E2B20BA5800F858E4 /* ViewController.swift in Sources */,
 				A28F6C102B1FAAB500F858E4 /* PostService.swift in Sources */,
 				A28F6C0A2B1F7C4300F858E4 /* PostListViewModel.swift in Sources */,
 				A28F6C0C2B1F7C6600F858E4 /* PostListViewController.swift in Sources */,
-				A28F6B9A2B1F490900F858E4 /* ViewController.swift in Sources */,
 				A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */,
 				A28F6BF92B1F499300F858E4 /* CommentService.swift in Sources */,
+				A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */,
 				A28F6B982B1F490900F858E4 /* SceneDelegate.swift in Sources */,
 				A28F6BED2B1F499300F858E4 /* Comment.swift in Sources */,
 				A28F6BF32B1F499300F858E4 /* Request.swift in Sources */,
@@ -410,6 +425,7 @@
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,
+				A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

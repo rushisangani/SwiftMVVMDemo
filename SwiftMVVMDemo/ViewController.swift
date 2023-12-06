@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func showPostsTapped(_ sender: Any) {
+        let viewModel = PostListViewModel()
+        let viewController = PostListViewController(viewModel: viewModel)
+        viewModel.viewDelegate = viewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
