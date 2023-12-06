@@ -10,13 +10,8 @@ import Combine
 
 protocol PostListViewModelHandler: AnyObject {
     var posts: [Post] { get }
-    func loadPosts() async
+    func loadPosts() async throws
     func post(atIndexPath indexPath: IndexPath) -> Post
-}
-
-protocol PostListViewDelegate: AnyObject {
-    func reloadData()
-    func showError(_ error: Error)
 }
 
 // MARK: - PostListViewModel
@@ -29,19 +24,12 @@ final class PostListViewModel: PostListViewModelHandler {
     }
     
     // MARK: - Properties
-    weak var viewDelegate: PostListViewDelegate?
     
     var posts: [Post] = []
     
     @MainActor
-    func loadPosts() async {
-        do {
-            self.posts = try await postService.getPosts()
-            viewDelegate?.reloadData()
-        }
-        catch {
-            viewDelegate?.showError(error)
-        }
+    func loadPosts() async throws {
+        posts = try await postService.getPosts()
     }
     
     func post(atIndexPath indexPath: IndexPath) -> Post {

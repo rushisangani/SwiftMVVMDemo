@@ -36,21 +36,18 @@ class PostListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Task {
-            await viewModel.loadPosts()
-        }
-    }
-}
-
-// MARK: - PostListViewDelegate
-
-extension PostListViewController: PostListViewDelegate {
-    func reloadData() {
-        tableView.reloadData()
+        loadPosts()
     }
     
-    func showError(_ error: Error) {
-        print(error.localizedDescription)
+    func loadPosts() {
+        Task {
+            do {
+                try await viewModel.loadPosts()
+                self.tableView.reloadData()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

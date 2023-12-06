@@ -20,7 +20,7 @@ final class PostListViewModelTests: XCTestCase {
     }
 
     func testPostViewModelReturnsPosts() async throws {
-        await postListViewModel!.loadPosts()
+        try await postListViewModel!.loadPosts()
         let posts = postListViewModel!.posts
         
         XCTAssertEqual(posts.count, 3)

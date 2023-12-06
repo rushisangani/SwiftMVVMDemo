@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBAction func showPostsTapped(_ sender: Any) {
         let viewModel = PostListViewModel()
         let viewController = PostListViewController(viewModel: viewModel)
-        viewModel.viewDelegate = viewController
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
