@@ -36,7 +36,9 @@ class PostListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.loadPosts()
+        Task {
+            await viewModel.loadPosts()
+        }
     }
 }
 

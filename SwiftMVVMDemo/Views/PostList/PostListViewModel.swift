@@ -10,7 +10,7 @@ import Combine
 
 protocol PostListViewModelHandler: AnyObject {
     var posts: [Post] { get }
-    func loadPosts()
+    func loadPosts() async
     func post(atIndexPath indexPath: IndexPath) -> Post
 }
 
@@ -34,15 +34,13 @@ final class PostListViewModel: PostListViewModelHandler {
     var posts: [Post] = []
     
     @MainActor
-    func loadPosts() {
-        Task {
-            do {
-                self.posts = try await postService.getPosts()
-                viewDelegate?.reloadData()
-            }
-            catch {
-                viewDelegate?.showError(error)
-            }
+    func loadPosts() async {
+        do {
+            self.posts = try await postService.getPosts()
+            viewDelegate?.reloadData()
+        }
+        catch {
+            viewDelegate?.showError(error)
         }
     }
     

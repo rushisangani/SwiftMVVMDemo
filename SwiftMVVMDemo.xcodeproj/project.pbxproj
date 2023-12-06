@@ -36,6 +36,7 @@
 		A28F6C1E2B20BA5800F858E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C1D2B20BA5800F858E4 /* ViewController.swift */; };
 		A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */; };
 		A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */; };
+		A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		A28F6C1D2B20BA5800F858E4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A28F6BD02B1F498000F858E4 /* APIResponseHandlerTests.swift */,
 				A28F6BD12B1F498000F858E4 /* APIManagerTests.swift */,
 				A28F6C0D2B1FA9FB00F858E4 /* PostServiceTests.swift */,
+				A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */,
 				A28F6BCE2B1F498000F858E4 /* TestData */,
 				A28F6BC52B1F498000F858E4 /* TestHelpers */,
 			);
@@ -437,6 +440,7 @@
 				A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */,
 				A28F6C0E2B1FA9FB00F858E4 /* PostServiceTests.swift in Sources */,
 				A28F6BDB2B1F498000F858E4 /* APIManagerTests.swift in Sources */,
+				A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */,
 				A28F6BD32B1F498000F858E4 /* APIRequestHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
