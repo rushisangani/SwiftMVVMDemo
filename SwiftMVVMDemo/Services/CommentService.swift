@@ -7,6 +7,19 @@
 
 import Foundation
 
+// MARK: - CommentRequest
+
+enum CommentRequest: Request {
+    case commentList
+    
+    var path: String {
+        switch self {
+        case .commentList:
+            return "/comments"
+        }
+    }
+}
+
 // MARK: - CommentService
 
 protocol CommentRetrievalService {

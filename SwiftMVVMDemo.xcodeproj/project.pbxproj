@@ -26,7 +26,6 @@
 		A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */; };
 		A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE72B1F499300F858E4 /* RequestError.swift */; };
 		A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE92B1F499300F858E4 /* APIConstants.swift */; };
-		A28F6BF82B1F499300F858E4 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEB2B1F499300F858E4 /* PostRequest.swift */; };
 		A28F6BF92B1F499300F858E4 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEC2B1F499300F858E4 /* CommentService.swift */; };
 		A28F6C032B1F4A4500F858E4 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = A28F6BCF2B1F498000F858E4 /* comments.json */; };
 		A28F6C0A2B1F7C4300F858E4 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */; };
@@ -34,7 +33,6 @@
 		A28F6C0E2B1FA9FB00F858E4 /* PostServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C0D2B1FA9FB00F858E4 /* PostServiceTests.swift */; };
 		A28F6C102B1FAAB500F858E4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C0F2B1FAAB500F858E4 /* PostService.swift */; };
 		A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C112B1FAB7200F858E4 /* APIManager.swift */; };
-		A28F6C142B1FB60600F858E4 /* CommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C132B1FB60600F858E4 /* CommentRequest.swift */; };
 		A28F6C172B1FB9A200F858E4 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = A28F6C152B1FB98800F858E4 /* posts.json */; };
 /* End PBXBuildFile section */
 
@@ -80,14 +78,12 @@
 		A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestHandler.swift; sourceTree = "<group>"; };
 		A28F6BE72B1F499300F858E4 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		A28F6BE92B1F499300F858E4 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		A28F6BEB2B1F499300F858E4 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		A28F6BEC2B1F499300F858E4 /* CommentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		A28F6C0D2B1FA9FB00F858E4 /* PostServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceTests.swift; sourceTree = "<group>"; };
 		A28F6C0F2B1FAAB500F858E4 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		A28F6C112B1FAB7200F858E4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		A28F6C132B1FB60600F858E4 /* CommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRequest.swift; sourceTree = "<group>"; };
 		A28F6C152B1FB98800F858E4 /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +137,8 @@
 			children = (
 				A28F6BE82B1F499300F858E4 /* Constants */,
 				A28F6BDF2B1F499300F858E4 /* Networking */,
+				A28F6C182B205C8100F858E4 /* Models */,
+				A28F6C192B205C9100F858E4 /* Services */,
 				A28F6C052B1F7B8F00F858E4 /* Views */,
 				A28F6B952B1F490900F858E4 /* AppDelegate.swift */,
 				A28F6B972B1F490900F858E4 /* SceneDelegate.swift */,
@@ -225,9 +223,6 @@
 		A28F6C062B1F7B9900F858E4 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
-				A28F6BDE2B1F499300F858E4 /* Post.swift */,
-				A28F6BEB2B1F499300F858E4 /* PostRequest.swift */,
-				A28F6C0F2B1FAAB500F858E4 /* PostService.swift */,
 				A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */,
 				A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */,
 			);
@@ -237,9 +232,6 @@
 		A28F6C072B1F7BA100F858E4 /* CommentList */ = {
 			isa = PBXGroup;
 			children = (
-				A28F6BDD2B1F499300F858E4 /* Comment.swift */,
-				A28F6C132B1FB60600F858E4 /* CommentRequest.swift */,
-				A28F6BEC2B1F499300F858E4 /* CommentService.swift */,
 			);
 			path = CommentList;
 			sourceTree = "<group>";
@@ -249,6 +241,24 @@
 			children = (
 			);
 			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		A28F6C182B205C8100F858E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6BDD2B1F499300F858E4 /* Comment.swift */,
+				A28F6BDE2B1F499300F858E4 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A28F6C192B205C9100F858E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C0F2B1FAAB500F858E4 /* PostService.swift */,
+				A28F6BEC2B1F499300F858E4 /* CommentService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,7 +397,6 @@
 			files = (
 				A28F6C102B1FAAB500F858E4 /* PostService.swift in Sources */,
 				A28F6C0A2B1F7C4300F858E4 /* PostListViewModel.swift in Sources */,
-				A28F6C142B1FB60600F858E4 /* CommentRequest.swift in Sources */,
 				A28F6C0C2B1F7C6600F858E4 /* PostListViewController.swift in Sources */,
 				A28F6B9A2B1F490900F858E4 /* ViewController.swift in Sources */,
 				A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */,
@@ -398,7 +407,6 @@
 				A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */,
 				A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */,
 				A28F6BF42B1F499300F858E4 /* APIResponseHandler.swift in Sources */,
-				A28F6BF82B1F499300F858E4 /* PostRequest.swift in Sources */,
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,

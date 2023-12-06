@@ -32,13 +32,29 @@ final class APIRequestHandlerTests: XCTestCase {
         }
     }
     
-    func testAPIRequestHandlerShouldThrowErrorWithInvalidRequest() async throws {
+    func testAPIRequestHandlerReturnsNoData() async throws {
         // dummy request
         let request: Request = MockRequest.dummy
         
         var result: Data?
         result = try? await requestHandler!.fetchData(from: request)
         XCTAssertNil(result, "Dummy request should return nil data.")
+    }
+    
+    func testAPIRequestHandlerShouldThrowErrorWithInvalidRequest() async throws {
+        // incorrect request
+        let request: Request = MockRequest.incorrect
+        let expectation = XCTestExpectation(description: "APIRequestHandler throws error")
+        
+        do {
+            _ = try await requestHandler!.fetchData(from: request)
+            XCTFail("APIRequestHandler should throw error with invalid request")
+        }
+        catch {
+            expectation.fulfill()
+            let errorCode = try! XCTUnwrap(error as NSError).code
+            XCTAssertEqual(errorCode, -1003)
+        }
     }
 }
 
@@ -49,12 +65,16 @@ enum MockRequest: Request {
     case getComments
     case getPosts
     case dummy
+    case incorrect
     
     var scheme: String { "https" }
     var host: String {
         switch self {
         case .dummy:
             ""
+        case .incorrect:
+            "jsonplaceholder123.typicode.com"
+        
         default:
             "jsonplaceholder.typicode.com"
         }
@@ -67,7 +87,8 @@ enum MockRequest: Request {
             "/comments"
         case .getPosts:
             "/posts"
-        case .dummy:
+        case .dummy,
+            .incorrect:
             ""
         }
     }

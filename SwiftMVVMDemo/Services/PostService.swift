@@ -7,6 +7,22 @@
 
 import Foundation
 
+// MARK: - PostRequest
+
+enum PostRequest: Request {
+    case getPosts
+    case getPost(id: Int)
+    
+    var path: String {
+        switch self {
+        case .getPosts:
+            return "/posts"
+        case .getPost(let id):
+            return "/posts/\(id)"
+        }
+    }
+}
+
 protocol PostRetrievalService {
     func getPosts() async throws -> [Post]
     func getPostById(_ id: Int) async throws -> Post?
