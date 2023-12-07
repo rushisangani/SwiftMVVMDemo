@@ -1,3 +1,5 @@
 .DS_Store
 */*.xcuserstate
 */*.xcbkptlist
+.DS_Store
+SwiftMVVMDemo.xcodeproj/project.xcworkspace/xcuserdata/rushisangani.xcuserdatad/UserInterfaceState.xcuserstate

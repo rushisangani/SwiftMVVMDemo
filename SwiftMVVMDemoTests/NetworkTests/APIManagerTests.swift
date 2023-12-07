@@ -36,7 +36,7 @@ final class APIManagerTests: XCTestCase {
             XCTAssert(comment.email == "Eliseo@gardner.biz")
         } 
         catch {
-            XCTFail(error.localizedDescription)
+            XCTFail("Expected APIManager should complete fetch request.")
         }
     }
 }

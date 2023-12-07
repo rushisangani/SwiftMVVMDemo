@@ -28,7 +28,7 @@ final class APIRequestHandlerTests: XCTestCase {
             XCTAssert(!data.isEmpty, "Expected data should not be empty.")
         } 
         catch {
-            XCTFail(error.localizedDescription)
+            XCTFail("Expected comments should be loaded")
         }
     }
     

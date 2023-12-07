@@ -8,8 +8,7 @@
 import UIKit
 
 class PostListViewController: UIViewController {
-
-    private let viewModel: PostListViewModelHandler
+    private(set) var viewModel: PostListViewModelHandler
     
     init(viewModel: PostListViewModelHandler) {
         self.viewModel = viewModel
@@ -22,8 +21,8 @@ class PostListViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var tableView = UITableView(frame: .zero, style: .plain)
-    private var cellIdentifier = "PostListTableViewCell"
+    private(set) var tableView = UITableView(frame: .zero, style: .plain)
+    private(set) var cellIdentifier = "PostListTableViewCell"
     
     // MARK: - Life cycle
     
