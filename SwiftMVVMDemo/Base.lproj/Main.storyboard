@@ -16,15 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-hW-2el">
-                                <rect key="frame" x="140.33333333333334" y="409" width="112.66666666666666" height="34.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-hW-2el">
+                                <rect key="frame" x="110.66666666666667" y="379.33333333333331" width="171.66666666666663" height="93.666666666666686"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmA-0i-gkf">
-                                        <rect key="frame" x="0.0" y="0.0" width="112.66666666666667" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Show Posts"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Posts UIKit" titleAlignment="leading">
+                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
                                         <connections>
-                                            <action selector="showPostsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSM-9X-jty"/>
+                                            <action selector="showPostsVCTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4NE-2d-FTd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISl-HY-ciU">
+                                        <rect key="frame" x="0.0" y="59.333333333333371" width="171.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Posts SwiftUI" titleAlignment="leading"/>
+                                        <connections>
+                                            <action selector="showPostsViewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOD-we-WJM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -65,6 +75,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

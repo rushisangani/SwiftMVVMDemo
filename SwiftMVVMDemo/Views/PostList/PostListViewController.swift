@@ -76,7 +76,8 @@ extension PostListViewController: UITableViewDataSource {
         let post = viewModel.post(atIndexPath: indexPath)
         cell.textLabel?.text = post.title
         cell.detailTextLabel?.text = post.body
-        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.numberOfLines = 2
+        cell.detailTextLabel?.numberOfLines = 0
         
         return cell
     }
@@ -98,6 +99,7 @@ extension PostListViewController {
     func setupViews() {
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperViewEdges()
+        navigationItem.title = "UIKit Posts"
         
         tableView.dataSource = self
         tableView.delegate = self

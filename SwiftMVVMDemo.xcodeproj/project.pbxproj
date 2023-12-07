@@ -38,6 +38,7 @@
 		A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */; };
 		A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */; };
 		A28F6C292B20CC4300F858E4 /* PostListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */; };
+		A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C2A2B21F82E00F858E4 /* PostListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelTests.swift; sourceTree = "<group>"; };
 		A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewControllerTests.swift; sourceTree = "<group>"; };
+		A28F6C2A2B21F82E00F858E4 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */,
 				A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */,
+				A28F6C2A2B21F82E00F858E4 /* PostListView.swift */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,
+				A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */,
 				A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

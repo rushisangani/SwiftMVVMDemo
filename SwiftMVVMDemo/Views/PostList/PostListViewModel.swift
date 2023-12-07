@@ -10,7 +10,7 @@ import Combine
 
 // MARK: - PostListViewModel
 
-final class PostListViewModel {
+final class PostListViewModel: ObservableObject {
     private let postService: PostRetrievalService
     
     init(postService: PostRetrievalService = PostService()) {
@@ -21,6 +21,7 @@ final class PostListViewModel {
     
     @Published var posts: [Post] = []
     
+    @MainActor
     func loadPosts() async throws {
         posts = try await postService.getPosts()
     }

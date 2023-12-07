@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
@@ -14,10 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func showPostsTapped(_ sender: Any) {
+    @IBAction func showPostsVCTapped(_ sender: Any) {
         let viewModel = PostListViewModel()
         let viewController = PostListViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func showPostsViewTapped(_ sender: Any) {
+        let viewModel = PostListViewModel()
+        let hostViewController = UIHostingController(rootView: PostListView(viewModel: viewModel))
+        self.navigationController?.pushViewController(hostViewController, animated: true)
     }
 }
 
