@@ -39,8 +39,6 @@ final class PostServiceTests: XCTestCase {
 fileprivate class MockAPIManager: APIService {
     
     func fetch<T: Codable>(request: Request) async throws -> T {
-        let filePath = Bundle.jsonFilePath(forResource: "posts")
-        let data = try Data(contentsOf: URL(filePath: filePath))
-        return try JSONDecoder().decode(T.self, from: data)
+        try Bundle.main.decodableObject(forResource: "posts", type: T.self)
     }
 }

@@ -9,7 +9,7 @@ import XCTest
 @testable import SwiftMVVMDemo
 
 final class PostListViewModelTests: XCTestCase {
-    var postListViewModel: PostListViewModelHandler?
+    var postListViewModel: PostListViewModel?
     
     override func setUpWithError() throws {
         postListViewModel = PostListViewModel(postService: MockPostService())
@@ -23,15 +23,16 @@ final class PostListViewModelTests: XCTestCase {
         try await postListViewModel!.loadPosts()
         let posts = postListViewModel!.posts
         
-        XCTAssertEqual(posts.count, 3)
+        // verify count
+        XCTAssertEqual(posts.count, 100)
         
         let first = try XCTUnwrap(posts.first)
         XCTAssertEqual(first.userId, 1)
         XCTAssertEqual(first.id, 1)
         
         let last = try XCTUnwrap(posts.last)
-        XCTAssertEqual(last.title, "Post 3")
-        XCTAssertEqual(last.body, "Body 3")
+        XCTAssertEqual(last.title, "at nam consequatur ea labore ea harum")
+        XCTAssertEqual(last.body, "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut")
     }
 }
 
@@ -39,17 +40,12 @@ final class PostListViewModelTests: XCTestCase {
 // MARK: - Mock
 
 class MockPostService: PostRetrievalService {
-    private var posts: [Post] = [
-        Post(userId: 1, id: 1, title: "Post 1", body: "Body 1"),
-        Post(userId: 1, id: 2, title: "Post 2", body: "Body 2"),
-        Post(userId: 2, id: 3, title: "Post 3", body: "Body 3")
-    ]
     
     func getPosts() async throws -> [Post] {
-        posts
+        try Bundle.main.decodableObject(forResource: "posts", type: [Post].self)
     }
     
     func getPostById(_ id: Int) async throws -> Post? {
-        posts.first
+        nil
     }
 }

@@ -8,15 +8,9 @@
 import Foundation
 import Combine
 
-protocol PostListViewModelHandler: AnyObject {
-    var posts: [Post] { get }
-    func loadPosts() async throws
-    func post(atIndexPath indexPath: IndexPath) -> Post
-}
-
 // MARK: - PostListViewModel
 
-final class PostListViewModel: PostListViewModelHandler {
+final class PostListViewModel {
     private let postService: PostRetrievalService
     
     init(postService: PostRetrievalService = PostService()) {
@@ -25,9 +19,8 @@ final class PostListViewModel: PostListViewModelHandler {
     
     // MARK: - Properties
     
-    var posts: [Post] = []
+    @Published var posts: [Post] = []
     
-    @MainActor
     func loadPosts() async throws {
         posts = try await postService.getPosts()
     }

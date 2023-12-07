@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class PostListViewController: UIViewController {
-    private(set) var viewModel: PostListViewModelHandler
+    private(set) var viewModel: PostListViewModel
     
-    init(viewModel: PostListViewModelHandler) {
+    init(viewModel: PostListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -22,7 +23,8 @@ class PostListViewController: UIViewController {
     // MARK: - Properties
     
     private(set) var tableView = UITableView(frame: .zero, style: .plain)
-    private(set) var cellIdentifier = "PostListTableViewCell"
+    private var cellIdentifier = "PostListTableViewCell"
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Life cycle
     
@@ -34,19 +36,29 @@ class PostListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadPosts()
+        
+        setupObservers()
+        getPosts()
     }
     
-    func loadPosts() {
+    func getPosts() {
         Task {
-            do {
-                try await viewModel.loadPosts()
-                self.tableView.reloadData()
-            } catch {
-                print(error.localizedDescription)
-            }
+            try await viewModel.loadPosts()
         }
+    }
+}
+
+// MARK: - Observables
+
+extension PostListViewController {
+    
+    func setupObservers() {
+        viewModel.$posts
+            .receive(on: RunLoop.main)
+            .sink { [weak self] posts in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 }
 

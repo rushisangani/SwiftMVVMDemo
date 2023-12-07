@@ -46,8 +46,7 @@ final class APIManagerTests: XCTestCase {
 fileprivate class MockAPIRequestHandler: RequestHandling {
     
     func fetchData(from request: Request) async throws -> Data {
-        let filePath = Bundle.jsonFilePath(forResource: "comments")
-        return try Data(contentsOf: URL(filePath: filePath))
+        try Bundle.main.fileData(forResource: "comments")
     }
 }
 

@@ -10,42 +10,36 @@ import XCTest
 
 final class PostListViewControllerTests: XCTestCase {
     var postListVC: PostListViewController!
+    var viewModel: PostListViewModel!
     
     override func setUpWithError() throws {
-        postListVC = PostListViewController(viewModel: MockPostListViewModel())
+        viewModel = PostListViewModel(postService: MockPostService())
+        postListVC = PostListViewController(viewModel: viewModel)
     }
 
     override func tearDownWithError() throws {
         postListVC = nil
+        viewModel = nil
     }
 
-    func testPostListVCShowPostsInTableView() async throws {
-//        postListVC.loadViewIfNeeded()
-//        
-//        let viewModel = postListVC.viewModel
-//        let tableView = postListVC.tableView
-//        
-//        
-//        let expectation = XCTestExpectation(description: "TableView has data")
-//        
-//        await XCTAssertEqual(viewModel.posts.count, tableView.numberOfRows(inSection: 0))
+    func testPostListVCShowPostsInTableView() throws {
+        let expectation = XCTestExpectation(description: "TableView has data")
+        
+        postListVC.loadView()
+        postListVC.setupObservers()
+        
+        Task {
+            do {
+                try await viewModel.loadPosts()
+                expectation.fulfill()
+            }
+            catch {
+                XCTFail("Expected viewmodel should load posts")
+            }
+        }
+        
+        wait(for: [expectation], timeout: 3)
+        XCTAssertEqual(viewModel.posts.count, postListVC.tableView.numberOfRows(inSection: 0))
     }
 
-}
-
-// MARK: - Mock
-
-class MockPostListViewModel: PostListViewModelHandler {
-    var posts: [Post] = []
-    
-    func loadPosts() async throws {
-        let filePath = Bundle.jsonFilePath(forResource: "posts")
-        let data = try Data(contentsOf: URL(filePath: filePath))
-        let list = try JSONDecoder().decode([Post].self, from: data)
-        posts.append(contentsOf: list)
-    }
-    
-    func post(atIndexPath indexPath: IndexPath) -> Post {
-        posts[indexPath.row]
-    }
 }
