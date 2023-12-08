@@ -26,5 +26,11 @@ class ViewController: UIViewController {
         let hostViewController = UIHostingController(rootView: PostListView(viewModel: viewModel))
         self.navigationController?.pushViewController(hostViewController, animated: true)
     }
+    
+    @IBAction func photoUIKitTapped(_ sender: Any) {
+        let viewModel = PhotosViewModel()
+        let viewController = PhotosViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 

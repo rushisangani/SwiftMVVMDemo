@@ -25,7 +25,6 @@
 		A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */; };
 		A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE72B1F499300F858E4 /* RequestError.swift */; };
 		A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BE92B1F499300F858E4 /* APIConstants.swift */; };
-		A28F6BF92B1F499300F858E4 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6BEC2B1F499300F858E4 /* CommentService.swift */; };
 		A28F6C032B1F4A4500F858E4 /* comments.json in Resources */ = {isa = PBXBuildFile; fileRef = A28F6BCF2B1F498000F858E4 /* comments.json */; };
 		A28F6C0A2B1F7C4300F858E4 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */; };
 		A28F6C0C2B1F7C6600F858E4 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */; };
@@ -39,6 +38,11 @@
 		A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */; };
 		A28F6C292B20CC4300F858E4 /* PostListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */; };
 		A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C2A2B21F82E00F858E4 /* PostListView.swift */; };
+		A28F6C312B2310D600F858E4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C302B2310D600F858E4 /* Photo.swift */; };
+		A28F6C332B23111200F858E4 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C322B23111200F858E4 /* PhotoService.swift */; };
+		A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C352B23124800F858E4 /* PhotosViewModel.swift */; };
+		A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C372B23125300F858E4 /* PhotosViewController.swift */; };
+		A28F6C3A2B23154C00F858E4 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +86,6 @@
 		A28F6BE62B1F499300F858E4 /* APIRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestHandler.swift; sourceTree = "<group>"; };
 		A28F6BE72B1F499300F858E4 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		A28F6BE92B1F499300F858E4 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		A28F6BEC2B1F499300F858E4 /* CommentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		A28F6C0D2B1FA9FB00F858E4 /* PostServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceTests.swift; sourceTree = "<group>"; };
@@ -95,6 +98,11 @@
 		A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelTests.swift; sourceTree = "<group>"; };
 		A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewControllerTests.swift; sourceTree = "<group>"; };
 		A28F6C2A2B21F82E00F858E4 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		A28F6C302B2310D600F858E4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A28F6C322B23111200F858E4 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		A28F6C352B23124800F858E4 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		A28F6C372B23125300F858E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,9 +230,8 @@
 		A28F6C052B1F7B8F00F858E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A28F6C342B23122F00F858E4 /* Photos */,
 				A28F6C062B1F7B9900F858E4 /* PostList */,
-				A28F6C082B1F7BCB00F858E4 /* PostDetail */,
-				A28F6C072B1F7BA100F858E4 /* CommentList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,25 +246,12 @@
 			path = PostList;
 			sourceTree = "<group>";
 		};
-		A28F6C072B1F7BA100F858E4 /* CommentList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommentList;
-			sourceTree = "<group>";
-		};
-		A28F6C082B1F7BCB00F858E4 /* PostDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PostDetail;
-			sourceTree = "<group>";
-		};
 		A28F6C182B205C8100F858E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A28F6BDD2B1F499300F858E4 /* Comment.swift */,
 				A28F6BDE2B1F499300F858E4 /* Post.swift */,
+				A28F6C302B2310D600F858E4 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A28F6C0F2B1FAAB500F858E4 /* PostService.swift */,
-				A28F6BEC2B1F499300F858E4 /* CommentService.swift */,
+				A28F6C322B23111200F858E4 /* PhotoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,6 +292,16 @@
 				A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */,
 			);
 			path = PostTests;
+			sourceTree = "<group>";
+		};
+		A28F6C342B23122F00F858E4 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C352B23124800F858E4 /* PhotosViewModel.swift */,
+				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
+				A28F6C372B23125300F858E4 /* PhotosViewController.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,18 +443,22 @@
 				A28F6C0A2B1F7C4300F858E4 /* PostListViewModel.swift in Sources */,
 				A28F6C0C2B1F7C6600F858E4 /* PostListViewController.swift in Sources */,
 				A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */,
-				A28F6BF92B1F499300F858E4 /* CommentService.swift in Sources */,
 				A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */,
 				A28F6B982B1F490900F858E4 /* SceneDelegate.swift in Sources */,
 				A28F6BED2B1F499300F858E4 /* Comment.swift in Sources */,
 				A28F6BF32B1F499300F858E4 /* Request.swift in Sources */,
 				A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */,
+				A28F6C3A2B23154C00F858E4 /* PhotoTableViewCell.swift in Sources */,
 				A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */,
 				A28F6BF42B1F499300F858E4 /* APIResponseHandler.swift in Sources */,
+				A28F6C312B2310D600F858E4 /* Photo.swift in Sources */,
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,
 				A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */,
+				A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */,
+				A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */,
+				A28F6C332B23111200F858E4 /* PhotoService.swift in Sources */,
 				A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

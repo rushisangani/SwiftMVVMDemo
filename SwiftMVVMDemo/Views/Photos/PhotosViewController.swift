@@ -1,17 +1,18 @@
 //
-//  PostListViewController.swift
+//  PhotosViewController.swift
 //  SwiftMVVMDemo
 //
-//  Created by Rushi Sangani on 05/12/2023.
+//  Created by Rushi Sangani on 08/12/2023.
 //
 
 import UIKit
 import Combine
 
-class PostListViewController: UIViewController {
-    private(set) var viewModel: PostListViewModel
+class PhotosViewController: UIViewController {
     
-    init(viewModel: PostListViewModel) {
+    private(set) var viewModel: PhotosViewModel
+    
+    init(viewModel: PhotosViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,7 +24,6 @@ class PostListViewController: UIViewController {
     // MARK: - Properties
     
     private(set) var tableView = UITableView(frame: .zero, style: .plain)
-    private var cellIdentifier = "PostListTableViewCell"
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Life cycle
@@ -38,22 +38,22 @@ class PostListViewController: UIViewController {
         super.viewDidLoad()
         
         setupObservers()
-        getPosts()
+        getPhotos()
     }
     
-    func getPosts() {
+    func getPhotos() {
         Task {
-            try await viewModel.loadPosts()
+            try await viewModel.getPhotos()
         }
     }
 }
 
 // MARK: - Observables
 
-extension PostListViewController {
+extension PhotosViewController {
     
     func setupObservers() {
-        viewModel.$posts
+        viewModel.$photos
             .receive(on: RunLoop.main)
             .sink { [weak self] posts in
                 self?.tableView.reloadData()
@@ -64,28 +64,24 @@ extension PostListViewController {
 
 // MARK: - UITableViewDataSource
 
-extension PostListViewController: UITableViewDataSource {
+extension PhotosViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.posts.count
+        viewModel.photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeCell(withIdentifier: cellIdentifier, style: .subtitle)
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
         
-        let post = viewModel.post(atIndexPath: indexPath)
-        cell.textLabel?.text = post.title
-        cell.detailTextLabel?.text = post.body
-        cell.textLabel?.numberOfLines = 2
-        cell.detailTextLabel?.numberOfLines = 0
-        
+        //let photo = viewModel.photo(atIndexPath: indexPath)
+        cell.photoImageView.image = UIImage(named: "sample")
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 
-extension PostListViewController: UITableViewDelegate {
+extension PhotosViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -94,16 +90,17 @@ extension PostListViewController: UITableViewDelegate {
 
 // MARK: - UISetup
 
-extension PostListViewController {
+extension PhotosViewController {
     
     func setupViews() {
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperViewEdges()
-        navigationItem.title = "UIKit Posts"
+        navigationItem.title = "Photos Prefetching"
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
     }
 }
