@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-hW-2el">
-                                <rect key="frame" x="110.66666666666667" y="349.66666666666669" width="171.66666666666663" height="153"/>
+                                <rect key="frame" x="110.66666666666667" y="320" width="171.66666666666663" height="212.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmA-0i-gkf">
                                         <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="34.333333333333336"/>
@@ -38,13 +38,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-7b-yK1">
-                                        <rect key="frame" x="0.0" y="118.66666666666661" width="171.66666666666666" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="118.66666666666667" width="171.66666666666666" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Photos UIKit" titleAlignment="leading">
                                             <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="photoUIKitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hrd-XP-bxF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-8Q-WTc">
+                                        <rect key="frame" x="0.0" y="178" width="171.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Photos SwiftUI" titleAlignment="leading">
+                                            <color key="baseForegroundColor" systemColor="systemTealColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="photosSwiftUITapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nU8-T8-bOj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,6 +101,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

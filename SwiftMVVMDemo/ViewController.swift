@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showPostsViewTapped(_ sender: Any) {
-        let viewModel = PostListViewModel()
-        let hostViewController = UIHostingController(rootView: PostListView(viewModel: viewModel))
+        let hostViewController = UIHostingController(rootView: PostListView())
         self.navigationController?.pushViewController(hostViewController, animated: true)
     }
     
@@ -31,6 +30,11 @@ class ViewController: UIViewController {
         let viewModel = PhotosViewModel()
         let viewController = PhotosViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func photosSwiftUITapped(_ sender: Any) {
+        let hostViewController = UIHostingController(rootView: PhotosAsyncImageView())
+        self.navigationController?.pushViewController(hostViewController, animated: true)
     }
 }
 

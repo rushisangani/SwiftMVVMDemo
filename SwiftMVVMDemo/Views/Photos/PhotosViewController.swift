@@ -59,6 +59,13 @@ extension PhotosViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
+        
+        viewModel.$images
+            .receive(on: RunLoop.main)
+            .sink { [weak self] posts in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -73,18 +80,33 @@ extension PhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
         
-        //let photo = viewModel.photo(atIndexPath: indexPath)
-        cell.photoImageView.image = UIImage(named: "sample")
+        let photo = viewModel.photo(atIndexPath: indexPath)
+        if let image = viewModel.images[photo.url] {
+            cell.photoImageView.image = image
+        } else {
+            cell.photoImageView.image = nil
+            //viewModel.downloadImage(fromURL: photo.url)
+        }
         return cell
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UITableViewDataSourcePrefetching
 
-extension PhotosViewController: UITableViewDelegate {
+extension PhotosViewController: UITableViewDataSourcePrefetching {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        // Perform image downloading for the indexPaths
+//        indexPaths.forEach {
+//            let photoURL = viewModel.photo(atIndexPath: $0).url
+//            viewModel.downloadImage(fromURL: photoURL)
+//        }
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+//        indexPaths.forEach {
+//            viewModel.cancelDownload(atIndexPath: $0)
+//        }
     }
 }
 
@@ -98,8 +120,8 @@ extension PhotosViewController {
         navigationItem.title = "Photos Prefetching"
         
         tableView.dataSource = self
-        tableView.delegate = self
-        tableView.estimatedRowHeight = 100
+        tableView.prefetchDataSource = self
+        tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
     }

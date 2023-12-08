@@ -41,6 +41,9 @@ extension PhotoTableViewCell {
     func setupViewComponents() {
         contentView.addSubview(photoImageView)
         photoImageView.autoPinEdgesToSuperViewEdges()
-        //photoImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        let heightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: 200)
+        heightConstraint.priority = .defaultHigh
+        heightConstraint.isActive = true
     }
 }

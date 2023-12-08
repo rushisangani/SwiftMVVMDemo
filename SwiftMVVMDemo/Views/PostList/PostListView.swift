@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct PostListView: View {
-    @ObservedObject var viewModel: PostListViewModel
+    @StateObject var viewModel: PostListViewModel
+    
+    init(postService: PostRetrievalService = PostService()) {
+        self._viewModel = StateObject(wrappedValue: PostListViewModel(postService: postService))
+    }
     
     var body: some View {
         List {
@@ -39,5 +43,5 @@ struct PostListRow: View {
 }
 
 #Preview {
-    PostListView(viewModel: PostListViewModel())
+    PostListView()
 }
