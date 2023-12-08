@@ -32,8 +32,13 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBAction func photosSwiftUITapped(_ sender: Any) {
+    @IBAction func photosSwiftUIAsyncImageTapped(_ sender: Any) {
         let hostViewController = UIHostingController(rootView: PhotosAsyncImageView())
+        self.navigationController?.pushViewController(hostViewController, animated: true)
+    }
+    
+    @IBAction func photosSwiftUIImageLoadingTapped(_ sender: Any) {
+        let hostViewController = UIHostingController(rootView: PhotosCustomView())
         self.navigationController?.pushViewController(hostViewController, animated: true)
     }
 }

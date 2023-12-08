@@ -43,8 +43,9 @@
 		A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C352B23124800F858E4 /* PhotosViewModel.swift */; };
 		A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C372B23125300F858E4 /* PhotosViewController.swift */; };
 		A28F6C3A2B23154C00F858E4 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */; };
-		A28F6C3E2B231D9300F858E4 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C3D2B231D9300F858E4 /* ImageDownloader.swift */; };
 		A28F6C402B2363ED00F858E4 /* PhotosAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C3F2B2363ED00F858E4 /* PhotosAsyncImageView.swift */; };
+		A28F6C422B236B3A00F858E4 /* PhotosCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C412B236B3A00F858E4 /* PhotosCustomView.swift */; };
+		A28F6C442B236B8400F858E4 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6C432B236B8400F858E4 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +106,9 @@
 		A28F6C352B23124800F858E4 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		A28F6C372B23125300F858E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
-		A28F6C3D2B231D9300F858E4 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		A28F6C3F2B2363ED00F858E4 /* PhotosAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAsyncImageView.swift; sourceTree = "<group>"; };
+		A28F6C412B236B3A00F858E4 /* PhotosCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCustomView.swift; sourceTree = "<group>"; };
+		A28F6C432B236B8400F858E4 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +276,6 @@
 			children = (
 				A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */,
 				A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */,
-				A28F6C3D2B231D9300F858E4 /* ImageDownloader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -306,6 +307,8 @@
 				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
 				A28F6C372B23125300F858E4 /* PhotosViewController.swift */,
 				A28F6C3F2B2363ED00F858E4 /* PhotosAsyncImageView.swift */,
+				A28F6C412B236B3A00F858E4 /* PhotosCustomView.swift */,
+				A28F6C432B236B8400F858E4 /* ImageLoader.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -456,17 +459,18 @@
 				A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */,
 				A28F6C3A2B23154C00F858E4 /* PhotoTableViewCell.swift in Sources */,
 				A28F6C402B2363ED00F858E4 /* PhotosAsyncImageView.swift in Sources */,
+				A28F6C442B236B8400F858E4 /* ImageLoader.swift in Sources */,
 				A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */,
 				A28F6BF42B1F499300F858E4 /* APIResponseHandler.swift in Sources */,
 				A28F6C312B2310D600F858E4 /* Photo.swift in Sources */,
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,
-				A28F6C3E2B231D9300F858E4 /* ImageDownloader.swift in Sources */,
 				A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */,
 				A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */,
 				A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */,
 				A28F6C332B23111200F858E4 /* PhotoService.swift in Sources */,
+				A28F6C422B236B3A00F858E4 /* PhotosCustomView.swift in Sources */,
 				A28F6C212B20BE1500F858E4 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

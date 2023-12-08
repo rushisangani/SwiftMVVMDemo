@@ -16,14 +16,20 @@ final class PhotosViewModel: ObservableObject {
     @Published var photos: [Photo] = []
     @Published var images: [String: UIImage] = [:]
     
-//    private var imageDownloader = ImageDownloader()
-//    private var cancellables = Set<AnyCancellable>()
-//    private var downloadTasks: [String: AnyCancellable] = [:]
+    private let imageLoader = ImageLoader()
+    private var cancellables = Set<AnyCancellable>()
     
     let service: PhotoRetrievalService
     
     init(service: PhotoRetrievalService = PhotoService()) {
         self.service = service
+        
+        imageLoader
+            .$imageInfo
+            .sink { [weak self] info in
+                self?.images[info.url] = info.image
+            }
+            .store(in: &cancellables)
     }
     
     @MainActor
@@ -31,28 +37,16 @@ final class PhotosViewModel: ObservableObject {
         photos = try await service.getPhotos(albumId: 1)
     }
     
-    func photo(atIndexPath indexPath: IndexPath) -> Photo {
-        photos[indexPath.row]
+    func photoURL(atIndexPath indexPath: IndexPath) -> String {
+        photos[indexPath.row].url
     }
     
-//    func downloadImage(fromURL url: String) {
-//        downloadTasks[url] = imageDownloader.getImage(fromUrl: url)
-//    }
-//    
-//    func cancelDownload(atIndexPath indexPath: IndexPath) {
-//        let url = photo(atIndexPath: indexPath).url
-//        downloadTasks[url]?.cancel()
-//    }
+    func image(atIndexPath indexPath: IndexPath) -> UIImage? {
+        let url = photoURL(atIndexPath: indexPath)
+        return images[url]
+    }
+    
+    func downloadImage(atIndexPath indexPath: IndexPath) {
+        imageLoader.getImage(url: photoURL(atIndexPath: indexPath))
+    }
 }
-
-//extension PhotosViewModel {
-//    
-//    func handleOnReceiveImage() {
-//        imageDownloader
-//            .imagePublisher
-//            .sink(receiveValue: { [weak self] (image, url) in
-//                self?.images[url] = image
-//            })
-//            .store(in: &cancellables)
-//    }
-//}

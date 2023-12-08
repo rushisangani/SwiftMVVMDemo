@@ -80,12 +80,11 @@ extension PhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
         
-        let photo = viewModel.photo(atIndexPath: indexPath)
-        if let image = viewModel.images[photo.url] {
+        if let image = viewModel.image(atIndexPath: indexPath) {
             cell.photoImageView.image = image
         } else {
             cell.photoImageView.image = nil
-            //viewModel.downloadImage(fromURL: photo.url)
+            viewModel.downloadImage(atIndexPath: indexPath)
         }
         return cell
     }
@@ -97,16 +96,15 @@ extension PhotosViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         // Perform image downloading for the indexPaths
-//        indexPaths.forEach {
-//            let photoURL = viewModel.photo(atIndexPath: $0).url
-//            viewModel.downloadImage(fromURL: photoURL)
-//        }
+        for indexPath in indexPaths {
+            if viewModel.image(atIndexPath: indexPath) == nil {
+                viewModel.downloadImage(atIndexPath: indexPath)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-//        indexPaths.forEach {
-//            viewModel.cancelDownload(atIndexPath: $0)
-//        }
+        // TODO: ??
     }
 }
 
