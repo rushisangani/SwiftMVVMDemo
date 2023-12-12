@@ -10,5 +10,3 @@ import Foundation
 struct APIConstants {
     static let host = "jsonplaceholder.typicode.com"
 }
-
-

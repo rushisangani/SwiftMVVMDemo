@@ -23,6 +23,7 @@ class PhotosViewController: UIViewController {
     
     // MARK: - Properties
     
+    weak var coordinator: PhotosCoordinator?
     private(set) var tableView = UITableView(frame: .zero, style: .plain)
     private var cancellables = Set<AnyCancellable>()
     

@@ -21,7 +21,7 @@ class PostListViewController: UIViewController {
     }
     
     // MARK: - Properties
-    
+    weak var coordinator: PostCoordinator?
     private(set) var tableView = UITableView(frame: .zero, style: .plain)
     private var cellIdentifier = "PostListTableViewCell"
     private var cancellables = Set<AnyCancellable>()
