@@ -73,7 +73,6 @@ extension PhotosViewController {
 extension PhotosViewController {
     
     func showImage(_ image: UIImage, atIndexPath indexPath: IndexPath) {
-        print("image downloaded for indexPath: \(indexPath.row)")
         tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
@@ -93,7 +92,6 @@ extension PhotosViewController: UITableViewDataSource {
             cell.photoImageView.image = image
         } else {
             cell.photoImageView.image = nil
-            print("Download image: cellForRow: \(indexPath.row)")
             viewModel.downloadImage(atIndexPath: indexPath)
         }
         return cell
@@ -108,7 +106,6 @@ extension PhotosViewController: UITableViewDataSourcePrefetching {
         // Perform image downloading for the indexPaths, only if not available in cache
         for indexPath in indexPaths {
             if viewModel.image(atIndexPath: indexPath) == nil {
-                print("Download image: prefetchRow: \(indexPath.row)")
                 viewModel.downloadImage(atIndexPath: indexPath)
             }
         }
@@ -130,7 +127,7 @@ extension PhotosViewController {
         
         tableView.dataSource = self
         tableView.prefetchDataSource = self
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)
     }

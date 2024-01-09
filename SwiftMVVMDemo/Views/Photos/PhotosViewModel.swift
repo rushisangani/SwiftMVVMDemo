@@ -15,7 +15,7 @@ final class PhotosViewModel: ObservableObject {
     
     @Published var photos: [Photo] = []
     lazy var imagePublisher = PassthroughSubject<(UIImage, IndexPath), Never>()
-    private var cancellables = Set<AnyCancellable>()
+    private var downloadQueue = Set<IndexPath>()
     
     let service: PhotoRetrievalService
     var imageService: ImageServiceProtocol?
@@ -37,10 +37,17 @@ final class PhotosViewModel: ObservableObject {
     }
     
     func downloadImage(atIndexPath indexPath: IndexPath) {
+        if downloadQueue.contains(indexPath) {
+            return
+        }
+        
         let photoUrl = photoUrl(at: indexPath)
+        downloadQueue.insert(indexPath)
+        
         Task {
             if let image = await imageService?.downloadWithAsync(from: photoUrl) {
                 self.imagePublisher.send((image, indexPath))
+                self.downloadQueue.remove(indexPath)
             }
         }
     }

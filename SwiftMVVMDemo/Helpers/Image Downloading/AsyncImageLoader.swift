@@ -42,7 +42,7 @@ class AsyncImageLoader: ObservableObject, AsyncImageLoading {
         
         let request = URLRequest(url: imageURL, cachePolicy: .returnCacheDataElseLoad)
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, _) = try await URLSession.shared.data(for: request)
             return UIImage(data: data)
         } catch {
             throw error

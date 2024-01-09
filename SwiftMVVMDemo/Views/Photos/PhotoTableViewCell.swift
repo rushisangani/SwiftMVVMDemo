@@ -40,7 +40,7 @@ extension PhotoTableViewCell {
         contentView.addSubview(photoImageView)
         photoImageView.autoPinEdgesToSuperViewEdges()
         
-        let heightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: 200)
+        let heightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: 300)
         heightConstraint.priority = .defaultHigh
         heightConstraint.isActive = true
     }
