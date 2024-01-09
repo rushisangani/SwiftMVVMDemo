@@ -18,7 +18,7 @@ struct PhotosCustomView: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.photos) {
-                    ImageLoadingView(url: $0.url)
+                    CustomAsyncImageView(url: $0.url)
                 }
             }
         }
@@ -33,8 +33,8 @@ struct PhotosCustomView: View {
     PhotosCustomView()
 }
 
-struct ImageLoadingView: View {
-    @StateObject var imageLoader = ImageLoader()
+struct CustomAsyncImageView: View {
+    @StateObject var imageService = ImageService()
     private let url: String
     
     init(url: String) {
@@ -43,7 +43,7 @@ struct ImageLoadingView: View {
     
     var body: some View {
         Group {
-            if let image = imageLoader.imageInfo.image {
+            if let image = imageService.image {
                 Image(uiImage: image)
                     .resizable()
                     .frame(height: 300)
@@ -53,7 +53,7 @@ struct ImageLoadingView: View {
             }
         }
         .onAppear() {
-            imageLoader.getImage(url: url)
+            imageService.getImage(from: url)
         }
     }
 }

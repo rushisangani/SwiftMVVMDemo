@@ -61,12 +61,25 @@ extension PhotosViewController {
             }
             .store(in: &cancellables)
         
-        viewModel.$images
-            .receive(on: RunLoop.main)
-            .sink { [weak self] posts in
-                self?.tableView.reloadData()
+        viewModel.imagePublisher
+            .sink { [weak self] (image, indexPath) in
+                self?.showImage(image, atIndexPath: indexPath)
             }
             .store(in: &cancellables)
+    }
+}
+
+extension PhotosViewController {
+    
+    func showImage(_ image: UIImage, atIndexPath indexPath: IndexPath) {
+        guard 
+            let visibleIndexPaths = tableView.indexPathsForSelectedRows,
+            visibleIndexPaths.contains(indexPath),
+            let cell = tableView.cellForRow(at: indexPath) as? PhotoTableViewCell
+        else {
+            return
+        }
+        cell.photoImageView.image = image
     }
 }
 
