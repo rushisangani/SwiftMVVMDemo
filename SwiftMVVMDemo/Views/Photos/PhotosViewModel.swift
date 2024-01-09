@@ -14,14 +14,14 @@ final class PhotosViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published var photos: [Photo] = []
-    let imagePublisher = PassthroughSubject<(UIImage, IndexPath), Never>()
+    lazy var imagePublisher = PassthroughSubject<(UIImage, IndexPath), Never>()
     private var cancellables = Set<AnyCancellable>()
     
     let service: PhotoRetrievalService
     var imageService: ImageServiceProtocol?
     
     init(service: PhotoRetrievalService = PhotoService(),
-         imageService: ImageService = ImageService()
+         imageService: ImageServiceProtocol? = nil
     ) {
         self.service = service
         self.imageService = imageService
@@ -38,23 +38,11 @@ final class PhotosViewModel: ObservableObject {
     
     func downloadImage(atIndexPath indexPath: IndexPath) {
         let photoUrl = photoUrl(at: indexPath)
-        
-//        imageService
-//        
-//        imageService?
-//            .download(from: photoUrl)
-//        
-//        
-//        imageLoader?
-//            .downloadImage(url: photo.url)
-//            .sink { _ in
-//            } receiveValue: { [weak self] image in
-//                if let image = image {
-//                    self?.imageCache?[photo.url] = image
-//                    self?.imagePublisher.send((image, indexPath))
-//                }
-//            }
-//            .store(in: &cancellables)
+        Task {
+            if let image = await imageService?.downloadWithAsync(from: photoUrl) {
+                self.imagePublisher.send((image, indexPath))
+            }
+        }
     }
 }
 

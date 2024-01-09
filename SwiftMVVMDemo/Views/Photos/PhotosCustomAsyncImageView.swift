@@ -1,5 +1,5 @@
 //
-//  PhotosCustomView.swift
+//  PhotosCustomAsyncImageView.swift
 //  SwiftMVVMDemo
 //
 //  Created by Rushi Sangani on 08/12/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PhotosCustomView: View {
+struct PhotosCustomAsyncImageView: View {
     @StateObject var viewModel: PhotosViewModel
     
     init(photoService: PhotoRetrievalService = PhotoService()) {
@@ -30,7 +30,7 @@ struct PhotosCustomView: View {
 }
 
 #Preview {
-    PhotosCustomView()
+    PhotosCustomAsyncImageView()
 }
 
 struct CustomAsyncImageView: View {

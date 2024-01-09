@@ -62,6 +62,7 @@ extension PhotosViewController {
             .store(in: &cancellables)
         
         viewModel.imagePublisher
+            .receive(on: RunLoop.main)
             .sink { [weak self] (image, indexPath) in
                 self?.showImage(image, atIndexPath: indexPath)
             }
@@ -72,14 +73,8 @@ extension PhotosViewController {
 extension PhotosViewController {
     
     func showImage(_ image: UIImage, atIndexPath indexPath: IndexPath) {
-        guard 
-            let visibleIndexPaths = tableView.indexPathsForSelectedRows,
-            visibleIndexPaths.contains(indexPath),
-            let cell = tableView.cellForRow(at: indexPath) as? PhotoTableViewCell
-        else {
-            return
-        }
-        cell.photoImageView.image = image
+        print("image downloaded for indexPath: \(indexPath.row)")
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
@@ -98,6 +93,7 @@ extension PhotosViewController: UITableViewDataSource {
             cell.photoImageView.image = image
         } else {
             cell.photoImageView.image = nil
+            print("Download image: cellForRow: \(indexPath.row)")
             viewModel.downloadImage(atIndexPath: indexPath)
         }
         return cell
@@ -109,9 +105,10 @@ extension PhotosViewController: UITableViewDataSource {
 extension PhotosViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        // Perform image downloading for the indexPaths
+        // Perform image downloading for the indexPaths, only if not available in cache
         for indexPath in indexPaths {
             if viewModel.image(atIndexPath: indexPath) == nil {
+                print("Download image: prefetchRow: \(indexPath.row)")
                 viewModel.downloadImage(atIndexPath: indexPath)
             }
         }

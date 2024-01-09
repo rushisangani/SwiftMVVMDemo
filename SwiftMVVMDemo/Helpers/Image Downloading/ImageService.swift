@@ -15,8 +15,11 @@ protocol ImageServiceProtocol {
     /// returns nil if image not available in cache
     func cachedImage(for url: String) -> UIImage?
     
-    /// Downloads image from specified url
-    func download(from url: String)
+    /// Downloads image using Combine from specified url
+    func downloadWithCombine(from url: String)
+    
+    /// Downloads image using Async from specified url
+    func downloadWithAsync(from url: String) async -> UIImage?
     
     /// Returns cached image if available, othewise download from url
     func getImage(from url: String)
@@ -50,16 +53,26 @@ class ImageService: ImageServiceProtocol, ObservableObject {
         imageCache[url]
     }
     
-    func download(from url: String) {
+    func downloadWithCombine(from url: String) {
         imageDownloader
-            .downloadImage(url: url)
+            .downloadWithCombine(url: url)
             .sink { _ in
             } receiveValue: { [weak self] image in
                 self?.image = image
                 self?.save(image: image, forUrl: url)
-                print("Finish for: \(url)")
             }
             .store(in: &cancellables)
+    }
+    
+    func downloadWithAsync(from url: String) async -> UIImage? {
+        do {
+            let image = try await imageDownloader.downloadWithAsync(url: url)
+            save(image: image, forUrl: url)
+            return image
+        } 
+        catch {
+            return nil
+        }
     }
     
     func getImage(from url: String) {
@@ -70,7 +83,7 @@ class ImageService: ImageServiceProtocol, ObservableObject {
         }
         
         // download
-        download(from: url)
+        downloadWithCombine(from: url)
     }
     
     func save(image: UIImage?, forUrl url: String) {

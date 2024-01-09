@@ -56,7 +56,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showPhotosImageLoadingView() {
-        let hostController = UIHostingController(rootView: PhotosCustomView())
+        let hostController = UIHostingController(rootView: PhotosCustomAsyncImageView())
         self.navigationController.pushViewController(hostController, animated: true)
     }
 }

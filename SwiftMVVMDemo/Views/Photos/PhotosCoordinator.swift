@@ -18,7 +18,7 @@ class PhotosCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = PhotosViewController(viewModel: PhotosViewModel())
+        let viewController = PhotosViewController(viewModel: PhotosViewModel(imageService: ImageService()))
         viewController.coordinator = self
         self.navigationController.pushViewController(viewController, animated: true)
     }
