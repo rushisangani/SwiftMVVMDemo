@@ -41,6 +41,10 @@ final class APIManagerTests: XCTestCase {
             XCTFail("Expected APIManager should complete fetch request.")
         }
     }
+    
+    func testAPIManagerThrowsError() async throws {
+        // TODO: How to implement this?
+    }
 }
 
 // MARK: - Mocks

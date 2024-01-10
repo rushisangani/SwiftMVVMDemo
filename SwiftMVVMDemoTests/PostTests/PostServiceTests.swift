@@ -32,6 +32,10 @@ final class PostServiceTests: XCTestCase {
         XCTAssertEqual(lastPost.userId, 10)
         XCTAssertEqual(lastPost.title, "at nam consequatur ea labore ea harum")
     }
+    
+    func testPostServiceThrowsError() async throws {
+        // TODO: How to implement this?
+    }
 }
 
 // MARK: - Mock
