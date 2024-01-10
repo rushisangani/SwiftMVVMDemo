@@ -12,6 +12,9 @@
 		A27997AB2B4E97470036C648 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AA2B4E97470036C648 /* Comment.swift */; };
 		A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */; };
 		A27997B12B4EB0900036C648 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B02B4EB0900036C648 /* ImageCacheTests.swift */; };
+		A27997B32B4EC1940036C648 /* AsyncImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */; };
+		A27997BB2B4ED5450036C648 /* MockRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B72B4ED5180036C648 /* MockRequests.swift */; };
+		A27997BC2B4ED5570036C648 /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B92B4ED51F0036C648 /* MockResponses.swift */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
@@ -78,6 +81,9 @@
 		A27997AA2B4E97470036C648 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
 		A27997B02B4EB0900036C648 /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
+		A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoaderTests.swift; sourceTree = "<group>"; };
+		A27997B72B4ED5180036C648 /* MockRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequests.swift; sourceTree = "<group>"; };
+		A27997B92B4ED51F0036C648 /* MockResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponses.swift; sourceTree = "<group>"; };
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28F6B9C2B1F490900F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,9 +213,19 @@
 			isa = PBXGroup;
 			children = (
 				A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */,
+				A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */,
 				A27997B02B4EB0900036C648 /* ImageCacheTests.swift */,
 			);
 			path = ImageDownloadingTests;
+			sourceTree = "<group>";
+		};
+		A27997B62B4ED5080036C648 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A27997B72B4ED5180036C648 /* MockRequests.swift */,
+				A27997B92B4ED51F0036C648 /* MockResponses.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A28F6B892B1F490900F858E4 = {
@@ -255,6 +271,7 @@
 		A28F6BAB2B1F490B00F858E4 /* SwiftMVVMDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				A27997B62B4ED5080036C648 /* Mocks */,
 				A28F6C262B20CC1C00F858E4 /* NetworkTests */,
 				A28F6C272B20CC2C00F858E4 /* PostTests */,
 				A27997AC2B4E978C0036C648 /* PhotosTests */,
@@ -541,6 +558,7 @@
 				A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */,
 				A28F6C232B20BE9800F858E4 /* UIView+Constraints.swift in Sources */,
 				A2A63D3D2B289980002C8DAC /* PostCoordinator.swift in Sources */,
+				A27997BB2B4ED5450036C648 /* MockRequests.swift in Sources */,
 				A28F6BF32B1F499300F858E4 /* Request.swift in Sources */,
 				A28F6BF72B1F499300F858E4 /* APIConstants.swift in Sources */,
 				A28F6C3A2B23154C00F858E4 /* PhotoTableViewCell.swift in Sources */,
@@ -557,6 +575,7 @@
 				A27997A52B4DCA890036C648 /* ImageService.swift in Sources */,
 				A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */,
 				A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */,
+				A27997BC2B4ED5570036C648 /* MockResponses.swift in Sources */,
 				A27997AB2B4E97470036C648 /* Comment.swift in Sources */,
 				A28F6C332B23111200F858E4 /* PhotoService.swift in Sources */,
 				A28F6C422B236B3A00F858E4 /* PhotosCustomAsyncImageView.swift in Sources */,
@@ -572,6 +591,7 @@
 				A28F6BDA2B1F498000F858E4 /* APIResponseHandlerTests.swift in Sources */,
 				A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */,
 				A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */,
+				A27997B32B4EC1940036C648 /* AsyncImageLoaderTests.swift in Sources */,
 				A28F6C0E2B1FA9FB00F858E4 /* PostServiceTests.swift in Sources */,
 				A28F6C292B20CC4300F858E4 /* PostListViewControllerTests.swift in Sources */,
 				A28F6BDB2B1F498000F858E4 /* APIManagerTests.swift in Sources */,
