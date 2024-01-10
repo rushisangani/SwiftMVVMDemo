@@ -19,13 +19,14 @@ The primary goal of this repository is to provide a comprehensive understanding 
 ### MVVM
 Demonstration of MVVM architecture in Swift along with additional components.
 
-| Component   | Class                                                |
-|-------------|----------------------------------------------------------|
-| Model       | [Post](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Models/Post.swift)                                                     |
-| View        | [PostListViewController](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/UIKit/PostListViewController.swift) (UIKit) <br>[PostListView](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/SwiftUI/PostListView.swift) (SwiftUI) |
-| ViewModel   | [PostListViewModel](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/PostListViewModel.swift) (for business logic)              |
-| Service     | [PostService](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Services/PhotoService.swift) (for connection to database or network)       |
-| Coordinator | [PostCoordinator](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/UIKit/PostCoordinator.swift) (for routing)                             |
+| Component   | Class                                                                                      | Unit Test                                               |
+|-------------|--------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| Model       | [Post](../SwiftMVVMDemo/Models/Post.swift)                                                 | -                                                       |
+| View        | [PostListViewController (UIKit)](../SwiftMVVMDemo/Views/PostList/UIKit/PostListViewController.swift) <br> [PostListView (SwiftUI)](../SwiftMVVMDemo/Views/PostList/SwiftUI/PostListView.swift) | -                                                       |
+| ViewModel   | [PostListViewModel (for business logic)](../SwiftMVVMDemo/Views/PostList/PostListViewModel.swift)       | [PostListViewModelTests](../SwiftMVVMDemoTests/PostTests/PostListViewModelTests.swift)                                                       |
+| Service     | [PostService (for connection to database or network)](../SwiftMVVMDemo/Services/PhotoService.swift) | [PostServiceTests](../SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                                       |
+| Coordinator | [PostCoordinator (for routing)](../SwiftMVVMDemo/Views/PostList/UIKit/PostCoordinator.swift) | -                                                       |
+
 
 
 - **Implementation of MVVM**: Demonstrates the practical application of the MVVM architecture in Swift.
