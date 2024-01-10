@@ -14,6 +14,8 @@ final class PhotosViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published var photos: [Photo] = []
+    
+    // Publisher for UIKit whenever images are downloaded
     lazy var imagePublisher = PassthroughSubject<(UIImage, IndexPath), Never>()
     private var downloadQueue = Set<IndexPath>()
     

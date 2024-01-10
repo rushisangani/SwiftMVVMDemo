@@ -20,35 +20,23 @@ final class APIResponseHandlerTests: XCTestCase {
     }
     
     func testAPIResponseHandlerParseSuccess() throws {
-        // post data as mock
-        let mockdata = MockResponse.postAsData
+        let response = MockPostResponse()
         
-        let result: Post = try responseHandler!.getResponse(from: mockdata)
+        let result: Post = try responseHandler!.getResponse(from: response.data)
         XCTAssertEqual(result.id, 1)
         XCTAssertEqual(result.title, "sunt aut facere repellat provident occaecati excepturi optio reprehenderit")
     }
     
     func testAPIResponseHandlerParseFailure() throws {
-        // dummy data as mock
-        let invalidData = MockResponse.dummyData
+        let response = MockErrorResponse()
+        let expectation = XCTestExpectation(description: "APIResponseHandler throws decode error")
         
-        var result: [Comment]?
-        result = try? responseHandler!.getResponse(from: invalidData)
-        XCTAssertNil(result, "Parse result should be nil")
-    }
-
-}
-
-
-// MARK: - Mocks
-
-fileprivate struct MockResponse {
-    static var postAsData: Data {
-        let json = "{\r\n\"userId\": 1,\r\n\"id\": 1,\r\n\"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\r\n\"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\r\n}"
-        return json.data(using: .utf8)!
-    }
-    
-    static var dummyData: Data {
-        "dummyText".data(using: .utf8)!
+        do {
+            let _: Post = try responseHandler!.getResponse(from: response.data)
+            XCTFail("APIResponseHandler should throw decode error")
+        }
+        catch RequestError.decode {
+            expectation.fulfill()
+        }
     }
 }

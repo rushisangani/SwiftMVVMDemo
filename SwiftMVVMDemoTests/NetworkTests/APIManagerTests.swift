@@ -22,19 +22,21 @@ final class APIManagerTests: XCTestCase {
         apiManager = nil
     }
     
-    func testAPIServiceGetComments() async throws {
+    func testAPIManagerGetComments() async throws {
         var comments: [Comment] = []
-        let expectation = XCTestExpectation(description: "APIManager Get Comments")
+        let request = MockCommentRequest()
         
+        let expectation = XCTestExpectation(description: "APIManager Get Comments")
         do {
-            comments = try await apiManager!.fetch(request: MockRequest.getComments)
+            comments = try await apiManager!.fetch(request: request)
             expectation.fulfill()
-            
+
+            // verify data correctness
             let comment = try XCTUnwrap(comments.first)
             XCTAssert(comment.id == 1)
             XCTAssert(comment.name == "id labore ex et quam laborum")
             XCTAssert(comment.email == "Eliseo@gardner.biz")
-        } 
+        }
         catch {
             XCTFail("Expected APIManager should complete fetch request.")
         }

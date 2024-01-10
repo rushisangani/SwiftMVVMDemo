@@ -75,6 +75,25 @@ class ImageService: ImageServiceProtocol, ObservableObject {
         }
     }
     
+//    func get(from url: String) -> AnyPublisher<UIImage, Never> {
+//        if let image = cachedImage(for: url) {
+//            return Just(image)
+//                .receive(on: DispatchQueue.main)
+//                .eraseToAnyPublisher()
+//        }
+//        
+//        return download(from: url)
+//    }
+    
+//    func download(from url: String) -> AnyPublisher<UIImage, Never> {
+//        imageDownloader
+//            .downloadWithCombine(url: url)
+//            .handleEvents(receiveOutput: { [weak self] image in
+//                self?.save(image: image, forUrl: url)
+//            })
+//            .eraseToAnyPublisher()
+//    }
+    
     func getImage(from url: String) {
         // from cache
         if let image = cachedImage(for: url) {

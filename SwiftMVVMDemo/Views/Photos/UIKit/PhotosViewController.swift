@@ -112,7 +112,7 @@ extension PhotosViewController: UITableViewDataSourcePrefetching {
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        // TODO: ??
+        // TODO: how to cancel prefetch?
     }
 }
 

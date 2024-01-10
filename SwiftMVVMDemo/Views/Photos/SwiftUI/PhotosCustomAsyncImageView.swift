@@ -35,6 +35,7 @@ struct PhotosCustomAsyncImageView: View {
 
 struct CustomAsyncImageView: View {
     @StateObject var imageService = ImageService()
+    @State var image: UIImage?
     private let url: String
     
     init(url: String) {
@@ -43,7 +44,7 @@ struct CustomAsyncImageView: View {
     
     var body: some View {
         Group {
-            if let image = imageService.image {
+            if let image = image {
                 Image(uiImage: image)
                     .resizable()
                     .frame(height: 300)
