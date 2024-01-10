@@ -32,17 +32,17 @@ The primary goal of this repository is to provide a comprehensive understanding 
 
 ### Implementation of SOLID Principles
 
-| Principle        | Meaning                                              | Example                                                     |
-|------------------|------------------------------------------------------|-------------------------------------------------------------|
-| S - Single Responsibility Principle | A class should have a single responsibility only. <br>`Example`: A common network class such as `APIClient` or `NetworkManager` handling API requests and parsing responses violates this principle.      | [APIRequestHandler](./SwiftMVVMDemo/Networking/APIRequestHandler.swift) class only handling network requests. <br><br> [APIResponseHandler](./SwiftMVVMDemo/Networking/APIResponseHandler.swift) class only for parsing network response.           |
-| O - Open/Closed Principle           | The classes and functions should be open for extension and closed for internal modification. | Using inheritance to add new functionality without altering existing code. |
-| L - Liskov Substitution Principle   | The code should be maintainable and reusable; objects should be replaced with instances of their subclasses without altering the behavior. The subclass should be able to override the methods of the base class without changing the functionality of the base class. | A subclass should be usable in place of its parent class. |
-| I - Interface Segregation Principle | A class should not be forced to implement interfaces that they do not use. | Breaking interfaces into smaller and more specific ones. |
-| D - Dependency Inversion Principle  | High-level modules should not depend on low-level modules; rather, both should depend on abstractions. | Using interfaces to decouple high-level and low-level modules. |
+| Principle                         | Meaning                                              | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example                                               |
+|-----------------------------------|------------------------------------------------------|-------------------------------------------------------------|
+| S - Single Responsibility         | A class should have a single responsibility only.   | [APIRequestHandler](./SwiftMVVMDemo/Networking/APIRequestHandler.swift) class only handling network requests. <br><br> [APIResponseHandler](./SwiftMVVMDemo/Networking/APIResponseHandler.swift) class only for parsing network response.           |
+| O - Open/Closed                   | The classes and functions should be open for extension and closed for internal modification. | Leveraging `generics` within the [APIService](./SwiftMVVMDemo/Networking/APIManager.swift) fetch functionality empowers us to execute a wide range of requests, not limited to posts alone. |
+| L - Liskov Substitution           | The code should be maintainable and reusable; objects should be replaced with instances of their subclasses without altering the behavior. The subclass should be able to override the methods of the base class without changing the functionality of the base class. | A subclass should be usable in place of its parent class. |
+| I - Interface Segregation         | A class should not be forced to implement interfaces that they do not use. | Breaking interfaces into smaller and more specific ones. |
+| D - Dependency Inversion          | High-level modules should not depend on low-level modules; rather, both should depend on abstractions. | Using protocols in [APIManager](./SwiftMVVMDemo/Networking/APIManager.swift) and [PostService](./SwiftMVVMDemo/Services/PhotoService.swift) allow us to remove direct dependencies and improve testability and mocking of individual components. |
+
 
 ---
 
-- **Implementation of MVVM**: Demonstrates the practical application of the MVVM architecture in Swift.
 - **Examples of Singleton**: Explains how the Singleton design pattern can be utilized effectively.
 - **UIKit and SwiftUI Usage**: Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI.
 - **Async-Await Usage**: Shows how to use async-await for asynchronous operations.
