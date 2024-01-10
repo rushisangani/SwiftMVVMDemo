@@ -8,7 +8,12 @@
 import Foundation
 import UIKit
 
-final class ImageCache {
+protocol ImageCaching {
+    func get(for url: String) -> UIImage?
+    func set(_ image: UIImage?, for url: String)
+}
+
+final class ImageCache: ImageCaching {
     
     // MARK: - Singleton
     
@@ -25,15 +30,21 @@ final class ImageCache {
     }()
     
     subscript(key: String) -> UIImage? {
-        get {
-            cache.object(forKey: key as NSString)
-        }
-        set {
-            if newValue == nil {
-                cache.removeObject(forKey: key as NSString)
-            } else {
-                cache.setObject(newValue!, forKey: key as NSString)
-            }
+        get { get(for: key) }
+        set { set(newValue, for: key) }
+    }
+    
+    // MARK: - ImageCaching
+    
+    func get(for url: String) -> UIImage? {
+        cache.object(forKey: url as NSString)
+    }
+    
+    func set(_ image: UIImage?, for url: String) {
+        if image == nil {
+            cache.removeObject(forKey: url as NSString)
+        } else {
+            cache.setObject(image!, forKey: url as NSString)
         }
     }
 }

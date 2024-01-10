@@ -11,6 +11,7 @@
 		A27997A52B4DCA890036C648 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997A42B4DCA890036C648 /* ImageService.swift */; };
 		A27997AB2B4E97470036C648 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AA2B4E97470036C648 /* Comment.swift */; };
 		A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */; };
+		A27997B12B4EB0900036C648 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B02B4EB0900036C648 /* ImageCacheTests.swift */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		A27997A42B4DCA890036C648 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		A27997AA2B4E97470036C648 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
+		A27997B02B4EB0900036C648 /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28F6B9C2B1F490900F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,12 +203,13 @@
 			path = PhotosTests;
 			sourceTree = "<group>";
 		};
-		A27997AD2B4E9A610036C648 /* ImageServiceTests */ = {
+		A27997AD2B4E9A610036C648 /* ImageDownloadingTests */ = {
 			isa = PBXGroup;
 			children = (
 				A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */,
+				A27997B02B4EB0900036C648 /* ImageCacheTests.swift */,
 			);
-			path = ImageServiceTests;
+			path = ImageDownloadingTests;
 			sourceTree = "<group>";
 		};
 		A28F6B892B1F490900F858E4 = {
@@ -255,7 +258,7 @@
 				A28F6C262B20CC1C00F858E4 /* NetworkTests */,
 				A28F6C272B20CC2C00F858E4 /* PostTests */,
 				A27997AC2B4E978C0036C648 /* PhotosTests */,
-				A27997AD2B4E9A610036C648 /* ImageServiceTests */,
+				A27997AD2B4E9A610036C648 /* ImageDownloadingTests */,
 				A28F6BCE2B1F498000F858E4 /* TestData */,
 				A28F6BC52B1F498000F858E4 /* TestHelpers */,
 			);
@@ -573,6 +576,7 @@
 				A28F6C292B20CC4300F858E4 /* PostListViewControllerTests.swift in Sources */,
 				A28F6BDB2B1F498000F858E4 /* APIManagerTests.swift in Sources */,
 				A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */,
+				A27997B12B4EB0900036C648 /* ImageCacheTests.swift in Sources */,
 				A28F6BD32B1F498000F858E4 /* APIRequestHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
