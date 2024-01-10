@@ -16,6 +16,7 @@
 		A27997BB2B4ED5450036C648 /* MockRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B72B4ED5180036C648 /* MockRequests.swift */; };
 		A27997BC2B4ED5570036C648 /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B92B4ED51F0036C648 /* MockResponses.swift */; };
 		A27997C02B4EF79C0036C648 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */; };
+		A27997C22B4F08F30036C648 /* PostListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C12B4F08F30036C648 /* PostListViewTests.swift */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		A27997B72B4ED5180036C648 /* MockRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequests.swift; sourceTree = "<group>"; };
 		A27997B92B4ED51F0036C648 /* MockResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponses.swift; sourceTree = "<group>"; };
 		A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		A27997C12B4F08F30036C648 /* PostListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewTests.swift; sourceTree = "<group>"; };
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28F6B9C2B1F490900F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				A28F6C0D2B1FA9FB00F858E4 /* PostServiceTests.swift */,
 				A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */,
 				A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */,
+				A27997C12B4F08F30036C648 /* PostListViewTests.swift */,
 			);
 			path = PostTests;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 			files = (
 				A28F6BDA2B1F498000F858E4 /* APIResponseHandlerTests.swift in Sources */,
 				A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */,
+				A27997C22B4F08F30036C648 /* PostListViewTests.swift in Sources */,
 				A27997C02B4EF79C0036C648 /* MockURLProtocol.swift in Sources */,
 				A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */,
 				A27997B32B4EC1940036C648 /* AsyncImageLoaderTests.swift in Sources */,
