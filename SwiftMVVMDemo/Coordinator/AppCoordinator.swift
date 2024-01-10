@@ -45,6 +45,7 @@ class AppCoordinator: Coordinator {
         child.start()
     }
     
+    // TODO: How to open SwiftUI Views using Coordinator?
     func showPostsSwiftUIView() {
         let hostController = UIHostingController(rootView: PostListView())
         self.navigationController.pushViewController(hostController, animated: true)
