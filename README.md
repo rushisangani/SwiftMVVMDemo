@@ -9,7 +9,7 @@ The primary goal of this repository is to provide a comprehensive understanding 
 - **MVVM Architecture**: Understand the Model-View-ViewModel architecture and its implementation in Swift.
 - **SOLID Principles**: Learn about writing maintainable and scalable code by applying SOLID principles.
 - **Design Patterns**: Explore various design patterns and their utilization in the context of this project.
-- **UIKit and SwiftUI**: See how a single ViewModel can be utilized in both UIKit and SwiftUI environments.
+- **UIKit and SwiftUI**: See how a single ViewModel can be utilized in both UIKit and SwiftUI frameworks.
 - **Swift Concurrency**: Examples showcasing async-await usage for concurrency.
 - **Combine Framework**: Understanding and using the Combine framework for reactive programming.
 - **Unit Tests**: Learn about writing unit tests to ensure code quality and reliability.
