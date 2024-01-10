@@ -16,7 +16,17 @@ The primary goal of this repository is to provide a comprehensive understanding 
 
 ## Contents
 
-The repository includes:
+### MVVM
+Demonstration of MVVM architecture in Swift along with additional components.
+
+| Component   | Class                                                |
+|-------------|----------------------------------------------------------|
+| Model       | [Post](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Models/Post.swift)                                                     |
+| View        | [PostListViewController](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/UIKit/PostListViewController.swift) (UIKit) <br>[PostListView](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/SwiftUI/PostListView.swift) (SwiftUI) |
+| ViewModel   | [PostListViewModel](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/PostListViewModel.swift) (for business logic)              |
+| Service     | [PostService](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Services/PhotoService.swift) (for connection to database or network)       |
+| Coordinator | [PostCoordinator](https://github.com/rushisangani/SwiftMVVMDemo/blob/main/SwiftMVVMDemo/Views/PostList/UIKit/PostCoordinator.swift) (for routing)                             |
+
 
 - **Implementation of MVVM**: Demonstrates the practical application of the MVVM architecture in Swift.
 - **Examples of Singleton**: Explains how the Singleton design pattern can be utilized effectively.
