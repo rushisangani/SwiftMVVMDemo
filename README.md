@@ -18,7 +18,7 @@ The primary goal of this repository is to provide a comprehensive understanding 
 
 ## Contents
 
-### Implementation of MVVM and Routing through Coordinator
+### MVVM + Routing through Coordinator
 
 | MVVM  |                    Coordinator       |
 |-------------|--------------------------------------------------------------------------------------------|
@@ -29,12 +29,12 @@ The primary goal of this repository is to provide a comprehensive understanding 
 | Model       | [Post](./SwiftMVVMDemo/Models/Post.swift)                                                 | -                                                                        |
 | View        | [PostListViewController](./SwiftMVVMDemo/Views/PostList/UIKit/PostListViewController.swift) (UIKit) <br> [PostListView](./SwiftMVVMDemo/Views/PostList/SwiftUI/PostListView.swift) (SwiftUI) | [PostListViewControllerTests](./SwiftMVVMDemoTests/PostTests/PostListViewControllerTests.swift) <br> [PostListViewTests](./SwiftMVVMDemoTests/PostTests/PostListViewTests.swift) |
 | ViewModel `Business logic`  | [PostListViewModel](./SwiftMVVMDemo/Views/PostList/PostListViewModel.swift)       | [PostListViewModelTests](./SwiftMVVMDemoTests/PostTests/PostListViewModelTests.swift)                                                       |
-| Service `Get data from DB or Network`   | [PostService](./SwiftMVVMDemo/Services/PhotoService.swift) | [PostServiceTests](./SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                                       |
+| Service `Get data from DB or Network`   | [PostService](./SwiftMVVMDemo/Services/PostService.swift) | [PostServiceTests](./SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                                       |
 | Coordinator `Routing` | [PostCoordinator](./SwiftMVVMDemo/Views/PostList/UIKit/PostCoordinator.swift) | -                                                                        |
 
 ---
 
-### Implementation of SOLID Principles
+### SOLID Principles
 
 | Principle                         | Meaning                                              | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example                                               |
 |-----------------------------------|------------------------------------------------------|-------------------------------------------------------------|
