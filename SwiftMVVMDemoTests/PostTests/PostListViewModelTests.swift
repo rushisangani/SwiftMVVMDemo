@@ -39,8 +39,11 @@ final class PostListViewModelTests: XCTestCase {
         XCTAssertEqual(last.body, "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut")
     }
     
-    func testPostsProperty() async throws {
+    func testPostsProperty() throws {
         let expectation = XCTestExpectation(description: "@Published posts count")
+        
+        // initial state
+        XCTAssertTrue(postListViewModel!.posts.isEmpty)
         
         postListViewModel!
             .$posts
@@ -52,7 +55,9 @@ final class PostListViewModelTests: XCTestCase {
             })
             .store(in: &cancellables)
         
-        try await postListViewModel!.loadPosts()
+        Task {
+            try await postListViewModel!.loadPosts()
+        }
         
         wait(for: [expectation], timeout: 3)
     }
