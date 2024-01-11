@@ -18,7 +18,11 @@ The primary goal of this repository is to provide a comprehensive understanding 
 
 ## Contents
 
-### Implementation of MVVM
+### Implementation of MVVM and Routing through Coordinator
+
+| MVVM  |                    Coordinator       |
+|-------------|--------------------------------------------------------------------------------------------|
+| ![MVVM](https://miro.medium.com/v2/resize:fit:1400/1*SWQ5UQ1XU8wSykwXnWpiNg.png)       | ![Coordinator](https://www.tpisoftware.com/tpu/File/onlineResource/articles/1110/titlePageImg.png)                                                  
 
 | Component   | Class                                                                                      | Unit Test                                                              |
 |-------------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
