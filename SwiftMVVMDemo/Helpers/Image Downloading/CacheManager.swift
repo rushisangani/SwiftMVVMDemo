@@ -1,5 +1,5 @@
 //
-//  AsyncImageCache.swift
+//  CacheManager.swift
 //  SwiftMVVMDemo
 //
 //  Created by Rushi Sangani on 09/01/2024.
@@ -8,16 +8,17 @@
 import Foundation
 import UIKit
 
-protocol ImageCaching {
+protocol Cacheable {
     func get(for url: String) -> UIImage?
     func set(_ image: UIImage?, for url: String)
+    subscript(key: String) -> UIImage? { get set }
 }
 
-final class ImageCache: ImageCaching {
+final class CacheManager: Cacheable {
     
     // MARK: - Singleton
     
-    public static let shared = ImageCache()
+    public static let shared = CacheManager()
     private init() {}
     
     // MARK: - Properties
@@ -29,12 +30,12 @@ final class ImageCache: ImageCaching {
         return cache
     }()
     
+    // MARK: - Cacheable
+    
     subscript(key: String) -> UIImage? {
         get { get(for: key) }
         set { set(newValue, for: key) }
     }
-    
-    // MARK: - ImageCaching
     
     func get(for url: String) -> UIImage? {
         cache.object(forKey: url as NSString)

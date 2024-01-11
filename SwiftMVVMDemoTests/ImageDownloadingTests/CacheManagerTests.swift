@@ -1,5 +1,5 @@
 //
-//  ImageCacheTests.swift
+//  CacheManagerTests.swift
 //  SwiftMVVMDemoTests
 //
 //  Created by Rushi Sangani on 10/01/2024.
@@ -8,15 +8,15 @@
 import XCTest
 @testable import SwiftMVVMDemo
 
-final class ImageCacheTests: XCTestCase {
-    var imageCache: ImageCaching?
+final class CacheManagerTests: XCTestCase {
+    var cacheManager: Cacheable!
     
     override func setUpWithError() throws {
-        imageCache = ImageCache.shared
+        cacheManager = CacheManager.shared
     }
 
     override func tearDownWithError() throws {
-        imageCache = nil
+        cacheManager = nil
     }
 
     func testImageCacheStoreAndRetrieveImages() {
@@ -24,9 +24,9 @@ final class ImageCacheTests: XCTestCase {
         let url = "https://via.placeholder.com/150/d32776"
         
         // set
-        imageCache!.set(image, for: url)
+        cacheManager.set(image, for: url)
         // get
-        let result = imageCache?.get(for: url)
+        let result = cacheManager.get(for: url)
         XCTAssertNotNil(result, "Expected image not nil")
         XCTAssertEqual(image, result)
     }

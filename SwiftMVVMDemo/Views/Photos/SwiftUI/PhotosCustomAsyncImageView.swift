@@ -34,17 +34,15 @@ struct PhotosCustomAsyncImageView: View {
 }
 
 struct CustomAsyncImageView: View {
-    @StateObject var imageService = ImageService()
-    @State var image: UIImage?
-    private let url: String
+    @StateObject var viewModel: PhotoRowViewModel
     
     init(url: String) {
-        self.url = url
+        self._viewModel = StateObject(wrappedValue: PhotoRowViewModel(url: url))
     }
     
     var body: some View {
         Group {
-            if let image = image {
+            if let image = viewModel.image {
                 Image(uiImage: image)
                     .resizable()
                     .frame(height: 300)
@@ -54,7 +52,7 @@ struct CustomAsyncImageView: View {
             }
         }
         .onAppear() {
-            imageService.getImage(from: url)
+            viewModel.getImage()
         }
     }
 }

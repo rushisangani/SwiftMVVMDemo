@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-hW-2el">
-                                <rect key="frame" x="70.333333333333329" y="290.33333333333326" width="252.33333333333337" height="271.66666666666674"/>
+                                <rect key="frame" x="38.666666666666657" y="290.33333333333326" width="315.66666666666674" height="271.66666666666674"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmA-0i-gkf">
-                                        <rect key="frame" x="0.0" y="0.0" width="252.33333333333334" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Show Posts UIKit" titleAlignment="leading">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
@@ -30,7 +30,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISl-HY-ciU">
-                                        <rect key="frame" x="0.0" y="59.333333333333371" width="252.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="59.333333333333371" width="315.66666666666669" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Show Posts SwiftUI" titleAlignment="leading"/>
                                         <connections>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-7b-yK1">
-                                        <rect key="frame" x="0.0" y="118.66666666666667" width="252.33333333333334" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="118.66666666666667" width="315.66666666666669" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Photos UIKit" titleAlignment="leading">
                                             <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-8Q-WTc">
-                                        <rect key="frame" x="0.0" y="178" width="252.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="178" width="315.66666666666669" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Photos SwiftUI AsyncImage" titleAlignment="leading">
                                             <color key="baseForegroundColor" systemColor="systemTealColor"/>
@@ -58,9 +58,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xG-mi-tCr">
-                                        <rect key="frame" x="0.0" y="237.33333333333331" width="252.33333333333334" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="237.33333333333331" width="315.66666666666669" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Photos SwiftUI Image Loading" titleAlignment="leading">
+                                        <buttonConfiguration key="configuration" style="plain" title="Photos SwiftUI Custom Image Loading" titleAlignment="leading">
                                             <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
                                         </buttonConfiguration>
                                         <connections>
