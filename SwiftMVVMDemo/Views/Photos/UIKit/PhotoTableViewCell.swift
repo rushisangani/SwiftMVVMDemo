@@ -44,6 +44,11 @@ class PhotoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        photoImageView.image = nil
+    }
+    
     func showPhoto(forUrl url: String) {
         viewModel.getImage(url: url)
     }

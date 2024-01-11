@@ -12,6 +12,7 @@ protocol Cacheable {
     func get(for url: String) -> UIImage?
     func set(_ image: UIImage?, for url: String)
     subscript(key: String) -> UIImage? { get set }
+    func clear()
 }
 
 final class CacheManager: Cacheable {
@@ -47,5 +48,9 @@ final class CacheManager: Cacheable {
         } else {
             cache.setObject(image!, forKey: url as NSString)
         }
+    }
+    
+    func clear() {
+        cache.removeAllObjects()
     }
 }

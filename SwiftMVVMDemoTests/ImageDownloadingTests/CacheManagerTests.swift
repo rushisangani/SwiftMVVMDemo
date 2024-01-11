@@ -30,4 +30,18 @@ final class CacheManagerTests: XCTestCase {
         XCTAssertNotNil(result, "Expected image not nil")
         XCTAssertEqual(image, result)
     }
+    
+    func testCacheManagerClearCache() {
+        let image = UIImage(named: "sample.png")!
+        let url = "<some url>"
+        
+        // set
+        cacheManager.set(image, for: url)
+        
+        // clear
+        cacheManager.clear()
+        
+        let result = cacheManager[url]
+        XCTAssertNil(result)
+    }
 }

@@ -170,7 +170,7 @@
 		A27997A62B4E95050036C648 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A27997C32B5003050036C648 /* Cell */,
+				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
 				A28F6C372B23125300F858E4 /* PhotosViewController.swift */,
 				A2A63D412B28B559002C8DAC /* PhotosCoordinator.swift */,
 			);
@@ -227,14 +227,6 @@
 				A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */,
 			);
 			path = "Common Mocks";
-			sourceTree = "<group>";
-		};
-		A27997C32B5003050036C648 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		A28F6B892B1F490900F858E4 = {
