@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A27997A02B4D9DCA0036C648 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279979F2B4D9DCA0036C648 /* CacheManager.swift */; };
-		A27997A52B4DCA890036C648 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997A42B4DCA890036C648 /* ImageService.swift */; };
 		A27997AB2B4E97470036C648 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AA2B4E97470036C648 /* Comment.swift */; };
-		A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */; };
 		A27997B12B4EB0900036C648 /* CacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B02B4EB0900036C648 /* CacheManagerTests.swift */; };
 		A27997B32B4EC1940036C648 /* AsyncImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */; };
 		A27997BB2B4ED5450036C648 /* MockRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B72B4ED5180036C648 /* MockRequests.swift */; };
 		A27997BC2B4ED5570036C648 /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997B92B4ED51F0036C648 /* MockResponses.swift */; };
 		A27997C02B4EF79C0036C648 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */; };
 		A27997C22B4F08F30036C648 /* PostListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C12B4F08F30036C648 /* PostListViewTests.swift */; };
-		A27997C52B50031C0036C648 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C42B50031C0036C648 /* PhotoCellViewModel.swift */; };
 		A27997C72B500D780036C648 /* PhotoRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C62B500D780036C648 /* PhotoRowViewModel.swift */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
@@ -81,16 +78,13 @@
 
 /* Begin PBXFileReference section */
 		A279979F2B4D9DCA0036C648 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		A27997A42B4DCA890036C648 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		A27997AA2B4E97470036C648 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
 		A27997B02B4EB0900036C648 /* CacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerTests.swift; sourceTree = "<group>"; };
 		A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoaderTests.swift; sourceTree = "<group>"; };
 		A27997B72B4ED5180036C648 /* MockRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequests.swift; sourceTree = "<group>"; };
 		A27997B92B4ED51F0036C648 /* MockResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponses.swift; sourceTree = "<group>"; };
 		A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		A27997C12B4F08F30036C648 /* PostListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewTests.swift; sourceTree = "<group>"; };
-		A27997C42B50031C0036C648 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
 		A27997C62B500D780036C648 /* PhotoRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowViewModel.swift; sourceTree = "<group>"; };
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +161,6 @@
 		A27997A12B4DA0710036C648 /* Image Downloading */ = {
 			isa = PBXGroup;
 			children = (
-				A27997A42B4DCA890036C648 /* ImageService.swift */,
 				A28F6C432B236B8400F858E4 /* AsyncImageLoader.swift */,
 				A279979F2B4D9DCA0036C648 /* CacheManager.swift */,
 			);
@@ -220,7 +213,6 @@
 		A27997AD2B4E9A610036C648 /* ImageDownloadingTests */ = {
 			isa = PBXGroup;
 			children = (
-				A27997AE2B4E9A850036C648 /* ImageServiceTests.swift */,
 				A27997B22B4EC1940036C648 /* AsyncImageLoaderTests.swift */,
 				A27997B02B4EB0900036C648 /* CacheManagerTests.swift */,
 			);
@@ -241,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
-				A27997C42B50031C0036C648 /* PhotoCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -588,13 +579,11 @@
 				A28F6C122B1FAB7200F858E4 /* APIManager.swift in Sources */,
 				A28F6BF42B1F499300F858E4 /* APIResponseHandler.swift in Sources */,
 				A28F6C312B2310D600F858E4 /* Photo.swift in Sources */,
-				A27997C52B50031C0036C648 /* PhotoCellViewModel.swift in Sources */,
 				A28F6BF62B1F499300F858E4 /* RequestError.swift in Sources */,
 				A28F6BEE2B1F499300F858E4 /* Post.swift in Sources */,
 				A28F6BF52B1F499300F858E4 /* APIRequestHandler.swift in Sources */,
 				A28F6C2B2B21F82E00F858E4 /* PostListView.swift in Sources */,
 				A27997A02B4D9DCA0036C648 /* CacheManager.swift in Sources */,
-				A27997A52B4DCA890036C648 /* ImageService.swift in Sources */,
 				A28F6C362B23124800F858E4 /* PhotosViewModel.swift in Sources */,
 				A28F6C382B23125300F858E4 /* PhotosViewController.swift in Sources */,
 				A27997BC2B4ED5570036C648 /* MockResponses.swift in Sources */,
@@ -611,7 +600,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28F6BDA2B1F498000F858E4 /* APIResponseHandlerTests.swift in Sources */,
-				A27997AF2B4E9A850036C648 /* ImageServiceTests.swift in Sources */,
 				A27997C22B4F08F30036C648 /* PostListViewTests.swift in Sources */,
 				A27997C02B4EF79C0036C648 /* MockURLProtocol.swift in Sources */,
 				A28F6BD22B1F498000F858E4 /* Bundle+Extension.swift in Sources */,
