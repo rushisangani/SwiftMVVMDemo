@@ -19,9 +19,11 @@ final class PhotosViewModel: ObservableObject {
         self.service = service
     }
     
-    @MainActor
     func getPhotos() async throws {
-        photos = try await service.getPhotos(albumId: 1)
+        let _photos = try await service.getPhotos(albumId: 1)
+        await MainActor.run {
+            self.photos = _photos
+        }
     }
     
     func photoUrl(at indexPath: IndexPath) -> String {

@@ -15,6 +15,13 @@ protocol Cacheable {
     func clear()
 }
 
+extension Cacheable {
+    subscript(key: String) -> UIImage? {
+        get { get(for: key) }
+        set { set(newValue, for: key) }
+    }
+}
+
 final class CacheManager: Cacheable {
     
     // MARK: - Singleton
@@ -32,11 +39,6 @@ final class CacheManager: Cacheable {
     }()
     
     // MARK: - Cacheable
-    
-    subscript(key: String) -> UIImage? {
-        get { get(for: key) }
-        set { set(newValue, for: key) }
-    }
     
     func get(for url: String) -> UIImage? {
         cache.object(forKey: url as NSString)

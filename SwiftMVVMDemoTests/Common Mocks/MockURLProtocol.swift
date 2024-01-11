@@ -43,3 +43,12 @@ class MockURLProtocol: URLProtocol {
     override func stopLoading() {
     }
 }
+
+extension URLSession {
+    
+    static var mock: URLSession {
+        let configuration: URLSessionConfiguration = .ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        return URLSession(configuration: configuration)
+    }
+}

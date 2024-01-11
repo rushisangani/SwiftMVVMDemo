@@ -13,11 +13,7 @@ final class APIRequestHandlerTests: XCTestCase {
     var request: MockCommentRequest!
     
     override func setUpWithError() throws {
-        let configuration: URLSessionConfiguration = .ephemeral
-        configuration.protocolClasses = [MockURLProtocol.self]
-        
-        let urlSession = URLSession(configuration: configuration)
-        requestHandler = APIRequestHandler(session: urlSession)
+        requestHandler = APIRequestHandler(session: URLSession.mock)
         request = MockCommentRequest()
     }
 

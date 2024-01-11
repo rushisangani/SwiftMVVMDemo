@@ -15,11 +15,7 @@ final class AsyncImageLoaderTests: XCTestCase {
     var cancellables: Set<AnyCancellable>!
     
     override func setUpWithError() throws {
-        let configuration: URLSessionConfiguration = .ephemeral
-        configuration.protocolClasses = [MockURLProtocol.self]
-        
-        let urlSession = URLSession(configuration: configuration)
-        asyncImageLoader = AsyncImageLoader(urlSession: urlSession)
+        asyncImageLoader = AsyncImageLoader(urlSession: URLSession.mock)
         
         imageUrl = "https://via.placeholder.com/151/d32776"
         cancellables = []

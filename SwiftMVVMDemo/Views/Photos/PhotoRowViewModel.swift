@@ -24,8 +24,8 @@ class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
     var imagePublisher: Published<UIImage?>.Publisher { $image } 
     private var cancellables = Set<AnyCancellable>()
     
-    private let imageLoader: AsyncImageLoading
-    private let cacheManager: Cacheable
+    let imageLoader: AsyncImageLoading
+    let cacheManager: Cacheable
     
     init(imageLoader: AsyncImageLoading = AsyncImageLoader(),
          cacheManager: Cacheable = CacheManager.shared

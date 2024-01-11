@@ -16,6 +16,7 @@
 		A27997C02B4EF79C0036C648 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */; };
 		A27997C22B4F08F30036C648 /* PostListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C12B4F08F30036C648 /* PostListViewTests.swift */; };
 		A27997C72B500D780036C648 /* PhotoRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C62B500D780036C648 /* PhotoRowViewModel.swift */; };
+		A27997C92B5069010036C648 /* PhotoRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27997C82B5069010036C648 /* PhotoRowViewModelTests.swift */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		A27997BD2B4EF7820036C648 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		A27997C12B4F08F30036C648 /* PostListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewTests.swift; sourceTree = "<group>"; };
 		A27997C62B500D780036C648 /* PhotoRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowViewModel.swift; sourceTree = "<group>"; };
+		A27997C82B5069010036C648 /* PhotoRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowViewModelTests.swift; sourceTree = "<group>"; };
 		A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28F6B952B1F490900F858E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28F6B9C2B1F490900F858E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		A27997AC2B4E978C0036C648 /* PhotosTests */ = {
 			isa = PBXGroup;
 			children = (
+				A27997C82B5069010036C648 /* PhotoRowViewModelTests.swift */,
 			);
 			path = PhotosTests;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				A28F6C0E2B1FA9FB00F858E4 /* PostServiceTests.swift in Sources */,
 				A28F6C292B20CC4300F858E4 /* PostListViewControllerTests.swift in Sources */,
 				A28F6BDB2B1F498000F858E4 /* APIManagerTests.swift in Sources */,
+				A27997C92B5069010036C648 /* PhotoRowViewModelTests.swift in Sources */,
 				A28F6C252B20C1A100F858E4 /* PostListViewModelTests.swift in Sources */,
 				A27997B12B4EB0900036C648 /* CacheManagerTests.swift in Sources */,
 				A28F6BD32B1F498000F858E4 /* APIRequestHandlerTests.swift in Sources */,
