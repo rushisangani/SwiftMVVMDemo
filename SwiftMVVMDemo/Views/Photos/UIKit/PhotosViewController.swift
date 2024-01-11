@@ -60,13 +60,6 @@ extension PhotosViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
-        
-        viewModel.imagePublisher
-            .receive(on: RunLoop.main)
-            .sink { [weak self] (image, indexPath) in
-                self?.showImage(image, atIndexPath: indexPath)
-            }
-            .store(in: &cancellables)
     }
 }
 
@@ -87,34 +80,28 @@ extension PhotosViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.identifier, for: indexPath) as! PhotoTableViewCell
-        
-        if let image = viewModel.image(atIndexPath: indexPath) {
-            cell.photoImageView.image = image
-        } else {
-            cell.photoImageView.image = nil
-            viewModel.downloadImage(atIndexPath: indexPath)
-        }
+        cell.showPhoto(forUrl: viewModel.photoUrl(at: indexPath))
         return cell
     }
 }
 
-// MARK: - UITableViewDataSourcePrefetching
-
-extension PhotosViewController: UITableViewDataSourcePrefetching {
-    
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        // Perform image downloading for the indexPaths, only if not available in cache
-        for indexPath in indexPaths {
-            if viewModel.image(atIndexPath: indexPath) == nil {
-                viewModel.downloadImage(atIndexPath: indexPath)
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        // TODO: how to cancel prefetch?
-    }
-}
+//// MARK: - UITableViewDataSourcePrefetching
+//
+//extension PhotosViewController: UITableViewDataSourcePrefetching {
+//    
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//        // Perform image downloading for the indexPaths, only if not available in cache
+//        for indexPath in indexPaths {
+////            if viewModel.image(atIndexPath: indexPath) == nil {
+////                viewModel.downloadImage(atIndexPath: indexPath)
+////            }
+//        }
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+//        // TODO: how to cancel prefetch?
+//    }
+//}
 
 // MARK: - UISetup
 
@@ -126,7 +113,7 @@ extension PhotosViewController {
         navigationItem.title = "Photos Prefetching"
         
         tableView.dataSource = self
-        tableView.prefetchDataSource = self
+        //tableView.prefetchDataSource = self
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.identifier)

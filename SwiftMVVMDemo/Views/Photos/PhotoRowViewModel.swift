@@ -10,8 +10,10 @@ import Combine
 import UIKit
 
 protocol PhotoRowViewModelHandler {
-    func getImage()
-    func downloadImage()
+    
+    var imagePublisher: Published<UIImage?>.Publisher { get }
+    func getImage(url: String)
+    func downloadImage(url: String)
 }
 
 class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
@@ -19,32 +21,30 @@ class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
     // MARK: - Properties
     
     @Published var image: UIImage? = nil
+    var imagePublisher: Published<UIImage?>.Publisher { $image } 
     private var cancellables = Set<AnyCancellable>()
     
-    private let url: String
     private let imageLoader: AsyncImageLoading
     private let cacheManager: Cacheable
     
-    init(url: String,
-         imageLoader: AsyncImageLoading = AsyncImageLoader(),
+    init(imageLoader: AsyncImageLoading = AsyncImageLoader(),
          cacheManager: Cacheable = CacheManager.shared
     ) {
-        self.url = url
         self.imageLoader = imageLoader
         self.cacheManager = cacheManager
     }
     
     // MARK: - PhotoRowViewModelHandler
     
-    func getImage() {
+    func getImage(url: String) {
         if let image = cacheManager[url] {
             self.image = image
         } else {
-            downloadImage()
+            downloadImage(url: url)
         }
     }
     
-    func downloadImage() {
+    func downloadImage(url: String) {
         imageLoader
             .downloadWithCombine(url: url)
             .sink { _ in

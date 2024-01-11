@@ -34,10 +34,11 @@ struct PhotosCustomAsyncImageView: View {
 }
 
 struct CustomAsyncImageView: View {
-    @StateObject var viewModel: PhotoRowViewModel
+    @StateObject var viewModel = PhotoRowViewModel()
+    private let url: String
     
     init(url: String) {
-        self._viewModel = StateObject(wrappedValue: PhotoRowViewModel(url: url))
+        self.url = url
     }
     
     var body: some View {
@@ -52,7 +53,7 @@ struct CustomAsyncImageView: View {
             }
         }
         .onAppear() {
-            viewModel.getImage()
+            viewModel.getImage(url: url)
         }
     }
 }
