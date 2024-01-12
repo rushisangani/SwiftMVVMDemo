@@ -1,6 +1,6 @@
 # Swift + MVVM
 
-Welcome to the SwiftMVVMDemo repository! This sample app is designed to showcase various programming concepts, including SOLID principles, MVVM architecture, design patterns like singleton, and decorator, and the integration of modern Swift features.
+Welcome to the SwiftMVVMDemo repository! This sample app is designed to showcase various programming concepts, including SOLID principles, MVVM architecture, design patterns like singleton, and observer, and the integration of modern Swift features.
 
 ## Purpose
 
