@@ -47,11 +47,25 @@ The primary goal of this repository is to provide a comprehensive understanding 
 
 ---
 
-- **Examples of Singleton**: Explains how the Singleton design pattern can be utilized effectively.
-- **UIKit and SwiftUI Usage**: Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI.
-- **Async-Await Usage**: Shows how to use async-await for asynchronous operations.
-- **Combine Framework Integration**: Includes examples of using Combine for reactive programming.
-- **Unit Tests**: Comprehensive unit tests ensure code reliability and functionality.
+### Design Patterns
+
+| Pattern    | Meaning    | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example | Tests |
+|------------|------------|--------------------|-------|
+| Singleton  | The singleton pattern guarantees that only one instance of a class is instantiated. | [CacheManager](./SwiftMVVMDemo/Helpers/Image%20Downloading/CacheManager.swift) | [CacheManagerTests](./SwiftMVVMDemoTests/ImageDownloadingTests/CacheManagerTests.swift) |
+| Observer   | The Observer pattern involves a subject maintaining a list of observers and automatically notifying them of any state changes, commonly used for implementing publish/subscribe systems. | [PhotoRowViewModel](./SwiftMVVMDemo/Views/Photos/PhotoRowViewModel.swift) uses `Combine` | [PhotoRowViewModelTests](./SwiftMVVMDemoTests/PhotosTests/PhotoRowViewModelTests.swift) |
+
+
+---
+
+### Other
+
+| Feature                      | Description                                                                         | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example                                                 |
+|------------------------------|-------------------------------------------------------------------------------------|---------------------------------------------------------|
+| UIKit + SwiftUI              | Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI. | [PhotosViewModel](./SwiftMVVMDemo/Views/Photos/PhotosViewModel.swift) <br> [PhotosViewController](./SwiftMVVMDemo/Views/Photos/UIKit/PhotosViewController.swift) <br> [PhotosCustomAsyncImageView](./SwiftMVVMDemo/Views/Photos/SwiftUI/PhotosCustomAsyncImageView.swift)                  |
+| Async-Await Usage            | Shows how to use async-await for asynchronous operations.                             | [APIRequestHandler](./SwiftMVVMDemo/Networking/APIRequestHandler.swift) <br> [PostListViewModel](./SwiftMVVMDemo/Views/PostList/PostListViewModel.swift)                                |
+| Combine Framework Integration | Examples of using Combine for reactive programming.                         | [AsyncImageLoader](./SwiftMVVMDemo/Helpers/Image%20Downloading/AsyncImageLoader.swift)  <br> [PhotoRowViewModel](./SwiftMVVMDemo/Views/Photos/PhotoRowViewModel.swift)                       |
+| Unit Tests                   | Comprehensive unit tests ensure code reliability and functionality.                  | [PostListViewControllerTests](./SwiftMVVMDemoTests/PostTests/PostListViewControllerTests.swift) <br> [APIRequestHandlerTests](./SwiftMVVMDemoTests/NetworkTests/APIRequestHandlerTests.swift)  <br>  [PostServiceTests](./SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                |
+
 
 ## Getting Started
 
