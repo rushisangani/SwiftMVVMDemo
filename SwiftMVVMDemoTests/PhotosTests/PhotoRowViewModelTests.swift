@@ -36,18 +36,23 @@ final class PhotoRowViewModelTests: XCTestCase {
         XCTAssertNil(viewModel.image)
         XCTAssertNil(viewModel.cacheManager.get(for: imageUrl))
         
+        viewModel.$image
+            .dropFirst()
+            .sink(receiveValue: { image in
+                expectation1.fulfill()
+                expectation2.fulfill()
+            })
+            .store(in: &cancellables)
+
+        
         // download
         viewModel.downloadImage(url: imageUrl)
         
         wait(for: [expectation1, expectation2], timeout: 2)
         
-        // image must not be nil
+        // verify
         XCTAssertNotNil(viewModel.image)
-        expectation1.fulfill()
-        
-        // image must present in cache
         XCTAssertNotNil(viewModel.cacheManager.get(for: imageUrl))
-        expectation2.fulfill()
     }
 }
 
