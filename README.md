@@ -1,6 +1,6 @@
 # Swift + MVVM
 
-Welcome to the SwiftMVVMDemo repository! This sample app is designed to showcase various programming concepts, including SOLID principles, MVVM architecture, design patterns like singleton, and decorator, and the integration of modern Swift features.
+Welcome to the SwiftMVVMDemo repository! This sample app is designed to showcase various programming concepts, including SOLID principles, MVVM architecture, design patterns like singleton, and observer, and the integration of modern Swift features.
 
 ## Purpose
 
@@ -40,18 +40,32 @@ The primary goal of this repository is to provide a comprehensive understanding 
 |-----------------------------------|------------------------------------------------------|-------------------------------------------------------------|
 | S - Single Responsibility         | A class should have a single responsibility only.   | [APIRequestHandler](./SwiftMVVMDemo/Networking/APIRequestHandler.swift) class only handling network requests. <br><br> [APIResponseHandler](./SwiftMVVMDemo/Networking/APIResponseHandler.swift) class only for parsing network response.           |
 | O - Open/Closed                   | The classes and functions should be open for extension and closed for internal modification. | Leveraging `generics` within the [APIService](./SwiftMVVMDemo/Networking/APIManager.swift) fetch functionality empowers us to execute a wide range of requests, not limited to posts alone. |
-| L - Liskov Substitution           | The code should be maintainable and reusable; objects should be replaced with instances of their subclasses without altering the behavior. The subclass should be able to override the methods of the base class without changing the functionality of the base class. | A subclass should be usable in place of its parent class. |
+| L - Liskov Substitution           | The code should be maintainable and reusable; objects should be replaced with instances of their subclasses without altering the behavior.  LSP is closely related to `Polymorphism`  | Typecasting of [PostCoordinator](./SwiftMVVMDemo/Views/PostList/UIKit/PostCoordinator.swift) to [Coordinator](./SwiftMVVMDemo/Coordinator/AppCoordinator.swift) protocol or calling method of `viewDidLoad` on **UINavigationController** will call `UIViewController.viewDidLoad` |
 | I - Interface Segregation         | A class should not be forced to implement interfaces that they do not use. | Breaking interfaces into smaller and more specific ones. |
 | D - Dependency Inversion          | High-level modules should not depend on low-level modules; rather, both should depend on abstractions. | Using protocols in [APIManager](./SwiftMVVMDemo/Networking/APIManager.swift) and [PostService](./SwiftMVVMDemo/Services/PhotoService.swift) allow us to remove direct dependencies and improve testability and mocking of individual components. |
 
 
 ---
 
-- **Examples of Singleton**: Explains how the Singleton design pattern can be utilized effectively.
-- **UIKit and SwiftUI Usage**: Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI.
-- **Async-Await Usage**: Shows how to use async-await for asynchronous operations.
-- **Combine Framework Integration**: Includes examples of using Combine for reactive programming.
-- **Unit Tests**: Comprehensive unit tests ensure code reliability and functionality.
+### Design Patterns
+
+| Pattern    | Meaning    | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example | Tests |
+|------------|------------|--------------------|-------|
+| Singleton  | The singleton pattern guarantees that only one instance of a class is instantiated. | [CacheManager](./SwiftMVVMDemo/Helpers/Image%20Downloading/CacheManager.swift) | [CacheManagerTests](./SwiftMVVMDemoTests/ImageDownloadingTests/CacheManagerTests.swift) |
+| Observer   | The Observer pattern involves a subject maintaining a list of observers and automatically notifying them of any state changes, commonly used for implementing publish/subscribe systems. | [PhotoRowViewModel](./SwiftMVVMDemo/Views/Photos/PhotoRowViewModel.swift) uses `Combine` | [PhotoRowViewModelTests](./SwiftMVVMDemoTests/PhotosTests/PhotoRowViewModelTests.swift) |
+
+
+---
+
+### Other
+
+| Feature                      | Description                                                                         | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example                                                 |
+|------------------------------|-------------------------------------------------------------------------------------|---------------------------------------------------------|
+| UIKit + SwiftUI              | Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI. | [PhotosViewModel](./SwiftMVVMDemo/Views/Photos/PhotosViewModel.swift) <br> [PhotosViewController](./SwiftMVVMDemo/Views/Photos/UIKit/PhotosViewController.swift) <br> [PhotosCustomAsyncImageView](./SwiftMVVMDemo/Views/Photos/SwiftUI/PhotosCustomAsyncImageView.swift)                  |
+| Async-Await Usage            | Shows how to use async-await for asynchronous operations.                             | [APIRequestHandler](./SwiftMVVMDemo/Networking/APIRequestHandler.swift) <br> [PostListViewModel](./SwiftMVVMDemo/Views/PostList/PostListViewModel.swift)                                |
+| Combine Framework | Examples of using Combine for reactive programming.                         | [AsyncImageLoader](./SwiftMVVMDemo/Helpers/Image%20Downloading/AsyncImageLoader.swift)  <br> [PhotoRowViewModel](./SwiftMVVMDemo/Views/Photos/PhotoRowViewModel.swift)                       |
+| Unit Tests                   | Comprehensive unit tests ensure code reliability and functionality.                  | [PostListViewControllerTests](./SwiftMVVMDemoTests/PostTests/PostListViewControllerTests.swift) <br> [APIRequestHandlerTests](./SwiftMVVMDemoTests/NetworkTests/APIRequestHandlerTests.swift)  <br>  [PostServiceTests](./SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                |
+
 
 ## Getting Started
 
