@@ -9,13 +9,9 @@ import XCTest
 @testable import SwiftMVVMDemo
 
 final class APIManagerTests: XCTestCase {
-    var apiManager: APIService?
+    var apiManager: APIService!
     
     override func setUpWithError() throws {
-        apiManager = APIManager(
-            requestHandler: MockAPIRequestHandler(),
-            responseHandler: MockAPIResponseHandler()
-        )
     }
 
     override func tearDownWithError() throws {
@@ -23,6 +19,11 @@ final class APIManagerTests: XCTestCase {
     }
     
     func testAPIManagerGetComments() async throws {
+        apiManager = APIManager(
+            requestHandler: MockAPIRequestHandler(shouldSucceed: true),
+            responseHandler: MockAPIResponseHandler(shouldSucceed: true)
+        )
+        
         var comments: [Comment] = []
         let request = MockCommentRequest()
         
@@ -43,22 +44,54 @@ final class APIManagerTests: XCTestCase {
     }
     
     func testAPIManagerThrowsError() async throws {
-        // TODO: How to implement this?
+        apiManager = APIManager(
+            requestHandler: MockAPIRequestHandler(shouldSucceed: false),
+            responseHandler: MockAPIResponseHandler(shouldSucceed: false)
+        )
+        
+        let request = MockCommentRequest()
+        
+        let expectation = XCTestExpectation(description: "APIManager throws error")
+        do {
+            let _: [Comment] = try await apiManager!.fetch(request: request)
+            XCTFail("Expected APIManager should throw error while getting comments")
+        }
+        catch RequestError.noData {
+            expectation.fulfill()
+        }
     }
 }
 
 // MARK: - Mocks
 
 fileprivate class MockAPIRequestHandler: RequestHandling {
+    private let shouldSucceed: Bool
+    
+    init(shouldSucceed: Bool) {
+        self.shouldSucceed = shouldSucceed
+    }
     
     func fetchData(from request: Request) async throws -> Data {
-        try Bundle.main.fileData(forResource: "comments")
+        if shouldSucceed {
+            try Bundle.main.fileData(forResource: "comments")
+        } else {
+            throw RequestError.noData
+        }
     }
 }
 
 fileprivate class MockAPIResponseHandler: ResponseHandling {
+    private let shouldSucceed: Bool
+    
+    init(shouldSucceed: Bool) {
+        self.shouldSucceed = shouldSucceed
+    }
     
     func getResponse<T: Codable>(from data: Data) throws -> T {
-        try JSONDecoder().decode(T.self, from: data)
+        if shouldSucceed {
+            try JSONDecoder().decode(T.self, from: data)
+        } else {
+            throw RequestError.decode(description: "No data")
+        }
     }
 }

@@ -10,16 +10,19 @@ import Combine
 @testable import SwiftMVVMDemo
 
 final class PostListViewModelTests: XCTestCase {
-    var postListViewModel: PostListViewModel?
+    var postListViewModel: PostListViewModel!
+    var postService: MockPostService!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUpWithError() throws {
-        postListViewModel = PostListViewModel(postService: MockPostService())
+        postService = MockPostService()
+        postListViewModel = PostListViewModel(postService: postService)
         cancellables = []
     }
 
     override func tearDownWithError() throws {
         postListViewModel = nil
+        postService = nil
         cancellables = nil
     }
 
@@ -62,8 +65,19 @@ final class PostListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 3)
     }
     
-    func testPostViewModelFailedGettingPosts() {
-        // TODO: How to implement this?
+    func testPostViewModelFailedGettingPosts() async {
+        postService.shouldFail = true
+        
+        do {
+            try await postListViewModel!.loadPosts()
+            XCTFail("PostListViewModel should throw error.")
+        }
+        catch RequestError.failed(let error) {
+            XCTAssertEqual(error, "No posts found.")
+        } 
+        catch {
+            XCTFail("PostListViewModel should throw RequestError.failed")
+        }
     }
 }
 
@@ -71,9 +85,13 @@ final class PostListViewModelTests: XCTestCase {
 // MARK: - Mock
 
 class MockPostService: PostRetrievalService {
+    var shouldFail: Bool = false
     
     func getPosts() async throws -> [Post] {
-        try Bundle.main.decodableObject(forResource: "posts", type: [Post].self)
+        guard !shouldFail else {
+            throw RequestError.failed(description: "No posts found.")
+        }
+        return try Bundle.main.decodableObject(forResource: "posts", type: [Post].self)
     }
     
     func getPostById(_ id: Int) async throws -> Post? {

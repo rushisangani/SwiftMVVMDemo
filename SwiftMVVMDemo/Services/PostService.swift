@@ -39,7 +39,6 @@ class PostService: PostRetrievalService {
     }
     
     func getPosts() async throws -> [Post] {
-        // TODO: Get posts from db if network not available
         try await apiManager.fetch(request: PostRequest.getPosts)
     }
     
