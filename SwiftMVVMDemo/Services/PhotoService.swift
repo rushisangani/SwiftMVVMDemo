@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkKit
 
 enum PhotoRequest: Request {
     case photosByAlbum(id: Int)
@@ -25,13 +26,13 @@ protocol PhotoRetrievalService {
 // MARK: - PhotoService
 
 class PhotoService: PhotoRetrievalService {
-    let apiManager: APIService
+    let networkManager: NetworkHandler
     
-    init(apiManager: APIService = APIManager()) {
-        self.apiManager = apiManager
+    init(networkManager: NetworkHandler = NetworkManager()) {
+        self.networkManager = networkManager
     }
     
     func getPhotos(albumId: Int) async throws -> [Photo] {
-        try await apiManager.fetch(request: PhotoRequest.photosByAlbum(id: albumId))
+        try await networkManager.fetch(request: PhotoRequest.photosByAlbum(id: albumId))
     }
 }

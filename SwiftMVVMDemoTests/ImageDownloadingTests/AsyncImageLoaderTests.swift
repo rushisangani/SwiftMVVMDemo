@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+import NetworkKit
 @testable import SwiftMVVMDemo
 
 final class AsyncImageLoaderTests: XCTestCase {

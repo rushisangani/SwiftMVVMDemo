@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkKit
 
 // MARK: - PostRequest
 
@@ -31,18 +32,17 @@ protocol PostRetrievalService {
 // MARK: - PostService
 
 class PostService: PostRetrievalService {
-    let apiManager: APIService
-    // let dbManager: DBService
+    let networkManager: NetworkHandler
     
-    init(apiManager: APIService = APIManager()) {
-        self.apiManager = apiManager
+    init(networkManager: NetworkHandler = NetworkManager()) {
+        self.networkManager = networkManager
     }
     
     func getPosts() async throws -> [Post] {
-        try await apiManager.fetch(request: PostRequest.getPosts)
+        try await networkManager.fetch(request: PostRequest.getPosts)
     }
     
     func getPostById(_ id: Int) async throws -> Post? {
-        try await apiManager.fetch(request: PostRequest.getPost(id: id))
+        try await networkManager.fetch(request: PostRequest.getPost(id: id))
     }
 }

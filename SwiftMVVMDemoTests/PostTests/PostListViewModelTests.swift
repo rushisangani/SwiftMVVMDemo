@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+import NetworkKit
 @testable import SwiftMVVMDemo
 
 final class PostListViewModelTests: XCTestCase {
@@ -91,7 +92,7 @@ class MockPostService: PostRetrievalService {
         guard !shouldFail else {
             throw RequestError.failed(description: "No posts found.")
         }
-        return try Bundle.main.decodableObject(forResource: "posts", type: [Post].self)
+        return try Bundle.test.decodableObject(forResource: "posts", type: [Post].self)
     }
     
     func getPostById(_ id: Int) async throws -> Post? {

@@ -6,13 +6,15 @@
 //
 
 import XCTest
+import NetworkKit
+import Combine
 @testable import SwiftMVVMDemo
 
 final class PostServiceTests: XCTestCase {
     var postService: PostService?
 
     override func setUpWithError() throws {
-        postService = PostService(apiManager: MockAPIManager())
+        postService = PostService(networkManager: MockNetworkManager())
     }
 
     override func tearDownWithError() throws {
@@ -40,9 +42,22 @@ final class PostServiceTests: XCTestCase {
 
 // MARK: - Mock
 
-fileprivate class MockAPIManager: APIService {
+fileprivate class MockNetworkManager: NetworkHandler {
     
-    func fetch<T: Codable>(request: Request) async throws -> T {
-        try Bundle.main.decodableObject(forResource: "posts", type: T.self)
+    func fetch<T>(request: Request) async throws -> T where T : Decodable {
+        try Bundle.test.decodableObject(forResource: "posts", type: T.self)
+    }
+    
+    func fetch<T>(request: Request) -> AnyPublisher<T, RequestError> where T : Decodable {
+        do {
+            let posts = try Bundle.test.decodableObject(forResource: "posts", type: T.self)
+            return Just(posts)
+                .setFailureType(to: RequestError.self)
+                .eraseToAnyPublisher()
+            
+        } catch {
+            return Fail(error: RequestError.failed(description: error.localizedDescription))
+                .eraseToAnyPublisher()
+        }
     }
 }
