@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		A27998332B581F030036C648 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = A27998322B581F030036C648 /* NetworkKit */; };
 		A27998352B58200D0036C648 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = A27998342B58200D0036C648 /* posts.json */; };
 		A27998372B5823160036C648 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27998362B5823160036C648 /* Bundle.swift */; };
+		A279983A2B5829FE0036C648 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = A27998392B5829FE0036C648 /* NetworkKit */; };
 		A28F6B962B1F490900F858E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F6B952B1F490900F858E4 /* AppDelegate.swift */; };
 		A28F6B9D2B1F490900F858E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9B2B1F490900F858E4 /* Main.storyboard */; };
 		A28F6B9F2B1F490B00F858E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A279983A2B5829FE0036C648 /* NetworkKit in Frameworks */,
 				A27998332B581F030036C648 /* NetworkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +378,7 @@
 			name = SwiftMVVMDemo;
 			packageProductDependencies = (
 				A27998322B581F030036C648 /* NetworkKit */,
+				A27998392B5829FE0036C648 /* NetworkKit */,
 			);
 			productName = SwiftMVVMDemo;
 			productReference = A28F6B922B1F490900F858E4 /* SwiftMVVMDemo.app */;
@@ -451,7 +454,7 @@
 			);
 			mainGroup = A28F6B892B1F490900F858E4;
 			packageReferences = (
-				A27998312B581F030036C648 /* XCLocalSwiftPackageReference "../NetworkKit" */,
+				A27998382B5829FE0036C648 /* XCRemoteSwiftPackageReference "NetworkKit" */,
 			);
 			productRefGroup = A28F6B932B1F490900F858E4 /* Products */;
 			projectDirPath = "";
@@ -880,16 +883,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		A27998312B581F030036C648 /* XCLocalSwiftPackageReference "../NetworkKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../NetworkKit;
+/* Begin XCRemoteSwiftPackageReference section */
+		A27998382B5829FE0036C648 /* XCRemoteSwiftPackageReference "NetworkKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rushisangani/NetworkKit/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		A27998322B581F030036C648 /* NetworkKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = NetworkKit;
+		};
+		A27998392B5829FE0036C648 /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A27998382B5829FE0036C648 /* XCRemoteSwiftPackageReference "NetworkKit" */;
 			productName = NetworkKit;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rushisangani/NetworkKit/",
+      "state" : {
+        "branch" : "main",
+        "revision" : "505fd98eade8b54438dac441c078be402dfe88fb"
+      }
+    }
+  ],
+  "version" : 2
+}
