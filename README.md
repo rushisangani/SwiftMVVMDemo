@@ -1,4 +1,4 @@
-# Swift + MVVM
+# Swift + MVVM + Swift Package
 
 Welcome to the SwiftMVVMDemo repository! This sample app is designed to showcase various programming concepts, including SOLID principles, MVVM architecture, design patterns like singleton, and observer, and the integration of modern Swift features.
 
@@ -82,6 +82,6 @@ To get started with this demo project, follow these steps:
 
 Contributions to enhance or expand this project are welcome! Feel free to submit issues, propose enhancements, or create pull requests to collaborate on improving this sample app further.
 
-## License
+## Connect
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, or distribute this code for both personal and commercial purposes. Refer to the License file for more details.
+Connect with me on [LinkedIn](https://www.linkedin.com/in/rushisangani/) or follow me on [Medium](https://medium.com/@rushisangani).
