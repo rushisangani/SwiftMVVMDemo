@@ -9,6 +9,7 @@ The primary goal of this repository is to provide a comprehensive understanding 
 - **MVVM Architecture**: Understand the Model-View-ViewModel architecture and its implementation in Swift.
 - **SOLID Principles**: Learn about writing maintainable and scalable code by applying SOLID principles.
 - **Design Patterns**: Explore various design patterns and their utilization in the context of this project.
+- **Swift Package**: Understand how you can create SwiftPackage and use it in your project.
 - **UIKit and SwiftUI**: See how a single ViewModel can be utilized in both UIKit and SwiftUI frameworks.
 - **Swift Concurrency**: Examples showcasing async-await usage for concurrency.
 - **Combine Framework**: Understanding and using the Combine framework for reactive programming.
@@ -62,6 +63,7 @@ The primary goal of this repository is to provide a comprehensive understanding 
 | Feature                      | Description                                                                         | <sub>![Checkmark](https://img.shields.io/badge/-&#x2714;-green)</sub> Example                                                 |
 |------------------------------|-------------------------------------------------------------------------------------|---------------------------------------------------------|
 | UIKit + SwiftUI              | Provides examples showcasing the use of a single **ViewModel** in both UIKit and SwiftUI. | [PhotosViewModel](./SwiftMVVMDemo/Views/Photos/PhotosViewModel.swift) <br> [PhotosViewController](./SwiftMVVMDemo/Views/Photos/UIKit/PhotosViewController.swift) <br> [PhotosCustomAsyncImageView](./SwiftMVVMDemo/Views/Photos/SwiftUI/PhotosCustomAsyncImageView.swift)                  |
+| Swift Package      | Create and distribute your own Swift Package and use it in your project.  | [NetworkKit](https://github.com/rushisangani/NetworkKit) |
 | Async-Await Usage            | Shows how to use async-await for asynchronous operations.                             | [APIRequestHandler](https://github.com/rushisangani/NetworkKit/blob/main/Sources/NetworkKit/APIRequestHandler.swift) <br> [PostListViewModel](./SwiftMVVMDemo/Views/PostList/PostListViewModel.swift)                                |
 | Combine Framework | Examples of using Combine for reactive programming.                         | [AsyncImageLoader](./SwiftMVVMDemo/Helpers/Image%20Downloading/AsyncImageLoader.swift)  <br> [PhotoRowViewModel](./SwiftMVVMDemo/Views/Photos/PhotoRowViewModel.swift)                       |
 | Unit Tests                   | Comprehensive unit tests ensure code reliability and functionality.                  | [PostListViewControllerTests](./SwiftMVVMDemoTests/PostTests/PostListViewControllerTests.swift) <br> [APIRequestHandlerTests](https://github.com/rushisangani/NetworkKit/blob/main/Tests/NetworkKitTests/APIRequestHandlerTests.swift)  <br>  [PostServiceTests](./SwiftMVVMDemoTests/PostTests/PostServiceTests.swift)                                |
