@@ -142,55 +142,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A27997A12B4DA0710036C648 /* Image Downloading */ = {
+		A27997A62B4E95050036C648 /* UIKit Views */ = {
 			isa = PBXGroup;
 			children = (
-				A28F6C432B236B8400F858E4 /* AsyncImageLoader.swift */,
-				A279979F2B4D9DCA0036C648 /* CacheManager.swift */,
-			);
-			path = "Image Downloading";
-			sourceTree = "<group>";
-		};
-		A27997A62B4E95050036C648 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
 				A28F6C372B23125300F858E4 /* PhotosViewController.swift */,
 				A2A63D412B28B559002C8DAC /* PhotosCoordinator.swift */,
 			);
-			path = UIKit;
+			path = "UIKit Views";
 			sourceTree = "<group>";
 		};
-		A27997A72B4E950C0036C648 /* SwiftUI */ = {
+		A27997A72B4E950C0036C648 /* SwiftUI Views */ = {
 			isa = PBXGroup;
 			children = (
 				A28F6C3F2B2363ED00F858E4 /* PhotosAsyncImageView.swift */,
 				A28F6C412B236B3A00F858E4 /* PhotosCustomAsyncImageView.swift */,
 			);
-			path = SwiftUI;
+			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
-		A27997A82B4E95440036C648 /* UIKit */ = {
+		A27997A82B4E95440036C648 /* UIKit Views */ = {
 			isa = PBXGroup;
 			children = (
 				A28F6C0B2B1F7C6600F858E4 /* PostListViewController.swift */,
 				A2A63D3C2B289980002C8DAC /* PostCoordinator.swift */,
 			);
-			path = UIKit;
+			path = "UIKit Views";
 			sourceTree = "<group>";
 		};
-		A27997A92B4E954B0036C648 /* SwiftUI */ = {
+		A27997A92B4E954B0036C648 /* SwiftUI Views */ = {
 			isa = PBXGroup;
 			children = (
 				A28F6C2A2B21F82E00F858E4 /* PostListView.swift */,
 			);
-			path = SwiftUI;
+			path = "SwiftUI Views";
 			sourceTree = "<group>";
 		};
 		A27997AC2B4E978C0036C648 /* PhotosTests */ = {
 			isa = PBXGroup;
 			children = (
 				A27997C82B5069010036C648 /* PhotoRowViewModelTests.swift */,
+				A27997AD2B4E9A610036C648 /* ImageDownloadingTests */,
 			);
 			path = PhotosTests;
 			sourceTree = "<group>";
@@ -204,12 +195,76 @@
 			path = ImageDownloadingTests;
 			sourceTree = "<group>";
 		};
-		A279982B2B56B4C60036C648 /* CoordinatorTests */ = {
+		A279B8B72B6E25D10069E16C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A279982C2B56B4E00036C648 /* PostCoordinatorTests.swift */,
+				A279B8B82B6E25DB0069E16C /* Posts */,
+				A279B8B92B6E25E00069E16C /* Photos */,
+				A279B8BC2B6E26C20069E16C /* Comments */,
 			);
-			path = CoordinatorTests;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A279B8B82B6E25DB0069E16C /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6BDE2B1F499300F858E4 /* Post.swift */,
+				A28F6C0F2B1FAAB500F858E4 /* PostService.swift */,
+				A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */,
+				A27997A82B4E95440036C648 /* UIKit Views */,
+				A27997A92B4E954B0036C648 /* SwiftUI Views */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		A279B8B92B6E25E00069E16C /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C302B2310D600F858E4 /* Photo.swift */,
+				A28F6C322B23111200F858E4 /* PhotoService.swift */,
+				A28F6C352B23124800F858E4 /* PhotosViewModel.swift */,
+				A279B8BA2B6E26410069E16C /* Photo Row */,
+				A27997A62B4E95050036C648 /* UIKit Views */,
+				A27997A72B4E950C0036C648 /* SwiftUI Views */,
+				A279B8BD2B6E27330069E16C /* Image Loader */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		A279B8BA2B6E26410069E16C /* Photo Row */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C392B23154C00F858E4 /* PhotoTableViewCell.swift */,
+				A27997C62B500D780036C648 /* PhotoRowViewModel.swift */,
+			);
+			path = "Photo Row";
+			sourceTree = "<group>";
+		};
+		A279B8BB2B6E26B50069E16C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */,
+				A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */,
+				A2A63D3A2B2895A7002C8DAC /* UIStoryboard+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A279B8BC2B6E26C20069E16C /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				A27997AA2B4E97470036C648 /* Comment.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		A279B8BD2B6E27330069E16C /* Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				A28F6C432B236B8400F858E4 /* AsyncImageLoader.swift */,
+				A279979F2B4D9DCA0036C648 /* CacheManager.swift */,
+			);
+			path = "Image Loader";
 			sourceTree = "<group>";
 		};
 		A28F6B892B1F490900F858E4 = {
@@ -235,14 +290,12 @@
 		A28F6B942B1F490900F858E4 /* SwiftMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A28F6BE92B1F499300F858E4 /* Constants.swift */,
-				A28F6C192B205C9100F858E4 /* Services */,
-				A2A63D372B2893F5002C8DAC /* Coordinator */,
-				A28F6C182B205C8100F858E4 /* Models */,
-				A28F6C052B1F7B8F00F858E4 /* Views */,
-				A28F6C1F2B20BDF400F858E4 /* Helpers */,
 				A28F6B952B1F490900F858E4 /* AppDelegate.swift */,
+				A28F6BE92B1F499300F858E4 /* Constants.swift */,
+				A2A63D382B289426002C8DAC /* AppCoordinator.swift */,
 				A28F6C1D2B20BA5800F858E4 /* ViewController.swift */,
+				A279B8B72B6E25D10069E16C /* Modules */,
+				A279B8BB2B6E26B50069E16C /* Extensions */,
 				A28F6B9B2B1F490900F858E4 /* Main.storyboard */,
 				A28F6B9E2B1F490B00F858E4 /* Assets.xcassets */,
 				A28F6BA02B1F490B00F858E4 /* LaunchScreen.storyboard */,
@@ -256,8 +309,6 @@
 			children = (
 				A28F6C272B20CC2C00F858E4 /* PostTests */,
 				A27997AC2B4E978C0036C648 /* PhotosTests */,
-				A27997AD2B4E9A610036C648 /* ImageDownloadingTests */,
-				A279982B2B56B4C60036C648 /* CoordinatorTests */,
 				A28F6BCE2B1F498000F858E4 /* Resources */,
 			);
 			path = SwiftMVVMDemoTests;
@@ -281,55 +332,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A28F6C052B1F7B8F00F858E4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C062B1F7B9900F858E4 /* PostList */,
-				A28F6C342B23122F00F858E4 /* Photos */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A28F6C062B1F7B9900F858E4 /* PostList */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C092B1F7C4300F858E4 /* PostListViewModel.swift */,
-				A27997A82B4E95440036C648 /* UIKit */,
-				A27997A92B4E954B0036C648 /* SwiftUI */,
-			);
-			path = PostList;
-			sourceTree = "<group>";
-		};
-		A28F6C182B205C8100F858E4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A27997AA2B4E97470036C648 /* Comment.swift */,
-				A28F6BDE2B1F499300F858E4 /* Post.swift */,
-				A28F6C302B2310D600F858E4 /* Photo.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A28F6C192B205C9100F858E4 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C0F2B1FAAB500F858E4 /* PostService.swift */,
-				A28F6C322B23111200F858E4 /* PhotoService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		A28F6C1F2B20BDF400F858E4 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A27997A12B4DA0710036C648 /* Image Downloading */,
-				A28F6C202B20BE1500F858E4 /* UITableView+Extension.swift */,
-				A28F6C222B20BE9800F858E4 /* UIView+Constraints.swift */,
-				A2A63D3A2B2895A7002C8DAC /* UIStoryboard+Extension.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		A28F6C272B20CC2C00F858E4 /* PostTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,27 +339,9 @@
 				A28F6C242B20C1A100F858E4 /* PostListViewModelTests.swift */,
 				A28F6C282B20CC4300F858E4 /* PostListViewControllerTests.swift */,
 				A27997C12B4F08F30036C648 /* PostListViewTests.swift */,
+				A279982C2B56B4E00036C648 /* PostCoordinatorTests.swift */,
 			);
 			path = PostTests;
-			sourceTree = "<group>";
-		};
-		A28F6C342B23122F00F858E4 /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				A28F6C352B23124800F858E4 /* PhotosViewModel.swift */,
-				A27997C62B500D780036C648 /* PhotoRowViewModel.swift */,
-				A27997A62B4E95050036C648 /* UIKit */,
-				A27997A72B4E950C0036C648 /* SwiftUI */,
-			);
-			path = Photos;
-			sourceTree = "<group>";
-		};
-		A2A63D372B2893F5002C8DAC /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				A2A63D382B289426002C8DAC /* AppCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

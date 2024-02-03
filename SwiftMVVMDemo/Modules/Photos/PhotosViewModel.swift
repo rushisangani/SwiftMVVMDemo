@@ -13,7 +13,7 @@ final class PhotosViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published var photos: [Photo] = []
-    let service: PhotoRetrievalService
+    private let service: PhotoRetrievalService
     
     init(service: PhotoRetrievalService = PhotoService()) {
         self.service = service
