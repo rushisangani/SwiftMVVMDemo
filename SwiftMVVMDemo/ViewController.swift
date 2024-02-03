@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CacheManager.shared.clear()
     }
 
     @IBAction func showPostsVCTapped(_ sender: Any) {

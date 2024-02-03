@@ -11,17 +11,16 @@ import UIKit
 
 protocol PhotoRowViewModelHandler {
     
-    var imagePublisher: Published<UIImage?>.Publisher { get }
+    var image: CurrentValueSubject<UIImage?, Never> { get }
     func getImage(url: String)
     func downloadImage(url: String)
 }
 
-class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
+class PhotoRowViewModel: PhotoRowViewModelHandler {
     
     // MARK: - Properties
     
-    @Published var image: UIImage? = nil
-    var imagePublisher: Published<UIImage?>.Publisher { $image } 
+    var image = CurrentValueSubject<UIImage?, Never>(nil)
     private var cancellables = Set<AnyCancellable>()
     
     private let imageLoader: AsyncImageLoading
@@ -38,7 +37,7 @@ class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
     
     func getImage(url: String) {
         if let image = cacheManager[url] {
-            self.image = image
+            self.image.send(image)
         } else {
             downloadImage(url: url)
         }
@@ -52,7 +51,7 @@ class PhotoRowViewModel: ObservableObject, PhotoRowViewModelHandler {
                 guard let self = self else { return }
                 
                 self.cacheManager.set(image, for: url)
-                self.image = image
+                self.image.send(image)
             }
             .store(in: &cancellables)
     }

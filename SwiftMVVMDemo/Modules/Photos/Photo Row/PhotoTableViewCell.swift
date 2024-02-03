@@ -63,7 +63,7 @@ extension PhotoTableViewCell {
     
     func addObserver() {
         viewModel
-            .imagePublisher
+            .image
             .sink { [weak self] image in
                 guard let self = self else { return }
                 self.photoImageView.image = image
