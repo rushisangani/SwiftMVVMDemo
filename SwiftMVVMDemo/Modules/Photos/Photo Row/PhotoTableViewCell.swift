@@ -19,7 +19,7 @@ class PhotoTableViewCell: UITableViewCell {
     
     static let identifier = "PhotoTableViewCellId"
     
-    lazy var photoImageView: UIImageView = {
+    let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
@@ -38,10 +38,6 @@ class PhotoTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     override func prepareForReuse() {
