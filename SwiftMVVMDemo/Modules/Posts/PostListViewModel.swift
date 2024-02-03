@@ -21,9 +21,11 @@ final class PostListViewModel: ObservableObject {
     
     @Published var posts: [Post] = []
     
-    @MainActor // required for SwiftUI to render views
     func loadPosts() async throws {
-        posts = try await postService.getPosts()
+        let _posts = try await postService.getPosts()
+        await MainActor.run {
+            self.posts = _posts
+        }
     }
     
     func post(atIndexPath indexPath: IndexPath) -> Post {
